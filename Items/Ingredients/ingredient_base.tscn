@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmrk2f1vbqb7w"]
+
+[ext_resource type="Script" path="res://Items/Ingredients/Ingredient.gd" id="1_f57f6"]
+
+[sub_resource type="Gradient" id="Gradient_u3ndo"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.537255, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yw4fb"]
+gradient = SubResource("Gradient_u3ndo")
+width = 8
+height = 8
+
+[node name="IngredientBase" type="Node2D"]
+z_index = 3
+script = ExtResource("1_f57f6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_yw4fb")
