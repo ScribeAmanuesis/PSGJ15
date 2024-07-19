@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://djvu1vrl68rpr"]
+[gd_scene load_steps=16 format=3 uid="uid://djvu1vrl68rpr"]
 
 [ext_resource type="Script" path="res://character_controller.gd" id="1_ekmeg"]
 [ext_resource type="Script" path="res://Enemy.gd" id="1_k0bs5"]
 [ext_resource type="PackedScene" uid="uid://btxb36gs2gjle" path="res://bullet.tscn" id="2_3mxpk"]
+[ext_resource type="Texture2D" uid="uid://cmbo27kdirt0" path="res://Assets/EnemyWoe.png" id="3_87yft"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_64ef5"]
 radius = 16.0
@@ -130,7 +131,7 @@ offset_bottom = 23.0
 text = "Health: 10"
 
 [node name="Sprite2D" type="Sprite2D" parent="TownEntrance/TDPath/PathFollow2D/Enemy"]
-texture = SubResource("GradientTexture2D_2xy22")
+texture = ExtResource("3_87yft")
 
 [node name="Tower" type="StaticBody2D" parent="TownEntrance"]
 position = Vector2(96, 448)
