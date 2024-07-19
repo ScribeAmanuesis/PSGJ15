@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=3 uid="uid://b0oibgnor3jo6"]
 
-[ext_resource type="Texture2D" uid="uid://lt8bsio0w4jp" path="res://Assets/Potion_TD_Example.png" id="1_u3kaq"]
-[ext_resource type="PackedScene" uid="uid://c2lehdawbgjeu" path="res://potion_order_card.tscn" id="2_sc5ac"]
-[ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="3_udf5k"]
-[ext_resource type="Texture2D" uid="uid://dwqe7ek0pf5pf" path="res://Assets/Cauldron.png" id="4_yywew"]
-[ext_resource type="Texture2D" uid="uid://jpabusjgnah8" path="res://Assets/SummonCircle.png" id="5_gnn4w"]
-[ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_xv8wc"]
+[ext_resource type="Texture2D" uid="uid://lt8bsio0w4jp" path="res://Assets/Potion_TD_Example.png" id="1_au5v1"]
+[ext_resource type="PackedScene" uid="uid://c2lehdawbgjeu" path="res://potion_order_card.tscn" id="2_ayjxo"]
+[ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="3_nldau"]
+[ext_resource type="Texture2D" uid="uid://dwqe7ek0pf5pf" path="res://Assets/Cauldron.png" id="4_6kefy"]
+[ext_resource type="Texture2D" uid="uid://jpabusjgnah8" path="res://Assets/SummonCircle.png" id="5_ijyl4"]
+[ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
 
 [node name="AlcehmistDesk" type="Node2D"]
 
 [node name="PotionTdExample" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(1.37306, 1.08908)
-texture = ExtResource("1_u3kaq")
+texture = ExtResource("1_au5v1")
 centered = false
 
 [node name="Control" type="Control" parent="."]
@@ -44,22 +44,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 42
 
-[node name="MarginContainer" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_sc5ac")]
+[node name="MarginContainer" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
 layout_mode = 2
 
-[node name="MarginContainer2" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_sc5ac")]
+[node name="MarginContainer2" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
 layout_mode = 2
 
-[node name="MarginContainer3" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_sc5ac")]
+[node name="MarginContainer3" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
 layout_mode = 2
 
-[node name="MarginContainer4" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_sc5ac")]
+[node name="MarginContainer4" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
 layout_mode = 2
 
-[node name="MarginContainer5" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_sc5ac")]
+[node name="MarginContainer5" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
 layout_mode = 2
 
-[node name="MarginContainer6" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_sc5ac")]
+[node name="MarginContainer6" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
 layout_mode = 2
 
 [node name="PotionShelf" type="Control" parent="Control"]
@@ -83,7 +83,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureButton" parent="Control/PotionShelf/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("3_udf5k")
+texture_normal = ExtResource("3_nldau")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -99,7 +99,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureButton" parent="Control/PotionShelf/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("3_udf5k")
+texture_normal = ExtResource("3_nldau")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -115,7 +115,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureButton" parent="Control/PotionShelf/HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("3_udf5k")
+texture_normal = ExtResource("3_nldau")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -131,7 +131,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureButton" parent="Control/PotionShelf/HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("3_udf5k")
+texture_normal = ExtResource("3_nldau")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -147,7 +147,7 @@ offset_left = 40.0
 offset_top = 368.0
 offset_right = 360.0
 offset_bottom = 616.0
-texture = ExtResource("4_yywew")
+texture = ExtResource("4_6kefy")
 
 [node name="SummoningCircle" type="TextureRect" parent="Control"]
 layout_mode = 0
@@ -155,7 +155,7 @@ offset_left = 672.0
 offset_top = 352.0
 offset_right = 1136.0
 offset_bottom = 616.0
-texture = ExtResource("5_gnn4w")
+texture = ExtResource("5_ijyl4")
 
 [node name="RecipeBook" type="TextureButton" parent="Control"]
 layout_mode = 0
@@ -163,5 +163,5 @@ offset_left = 440.0
 offset_top = 416.0
 offset_right = 632.0
 offset_bottom = 584.0
-texture_normal = ExtResource("6_xv8wc")
+texture_normal = ExtResource("6_5gb5f")
 stretch_mode = 0

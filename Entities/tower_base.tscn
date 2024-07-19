@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4qnvgdco6wq3"]
+
+[ext_resource type="Script" path="res://Entities/Tower.gd" id="1_4d7qr"]
+[ext_resource type="PackedScene" uid="uid://btxb36gs2gjle" path="res://Entities/bullet.tscn" id="1_nxhx8"]
+[ext_resource type="Script" path="res://Effects/ShootAt.gd" id="2_lhbt0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sttef"]
+
+[sub_resource type="Gradient" id="Gradient_qb8oi"]
+interpolation_mode = 1
+colors = PackedColorArray(0.63, 0.2835, 0.462525, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_logy6"]
+gradient = SubResource("Gradient_qb8oi")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.1)
+metadata/_snap_enabled = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sl1ki"]
+radius = 128.0
+
+[node name="Tower" type="StaticBody2D"]
+script = ExtResource("1_4d7qr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sttef")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_logy6")
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="ShootAt" type="Node2D" parent="Effects"]
+script = ExtResource("2_lhbt0")
+bullet_scene = ExtResource("1_nxhx8")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_sl1ki")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://btxb36gs2gjle"]
+
+[ext_resource type="Script" path="res://Entities/Bullet.gd" id="1_ryl6r"]
+[ext_resource type="Script" path="res://Effects/DamageTarget.gd" id="2_ykrgf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o0shd"]
+friction = 0.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7e84h"]
+width = 8
+height = 8
+invert = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6g3g"]
+
+[node name="Bullet" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_o0shd")
+gravity_scale = 0.0
+script = ExtResource("1_ryl6r")
+pierce = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("NoiseTexture2D_7e84h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g6g3g")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_g6g3g")
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="DamageTarget" type="Node2D" parent="Effects"]
+script = ExtResource("2_ykrgf")
