@@ -27,15 +27,17 @@ script = ExtResource("1_4d7qr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sttef")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_logy6")
 
 [node name="Effects" type="Node2D" parent="."]
 
-[node name="ShootAt" type="Node2D" parent="Effects"]
+[node name="ShootAt" type="Node2D" parent="Effects" node_paths=PackedStringArray("collision_exceptions")]
 script = ExtResource("2_lhbt0")
 bullet_scene = ExtResource("1_nxhx8")
+collision_exceptions = [NodePath("../../Range")]
 
 [node name="Range" type="Area2D" parent="."]
 
