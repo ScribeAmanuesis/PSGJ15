@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwl8tsgpesjlp"]
+
+[ext_resource type="PackedScene" uid="uid://87wqpp6umgd" path="res://Entities/Enemies/enemy_base.tscn" id="1_auwde"]
+[ext_resource type="Texture2D" uid="uid://dgkn5s8q71opy" path="res://Assets/EnemyBother.png" id="2_fwsfj"]
+
+[sub_resource type="GDScript" id="GDScript_i4q2v"]
+script/source = "extends Node2D
+
+@export var speed : = 1.5
+@export var deceleration : = 0.1
+
+
+func _process(delta):
+	var parent : PathFollow2D = get_parent()
+	parent.progress += speed
+	speed -= delta * deceleration
+	speed = max(0.3, speed)
+"
+
+[node name="Bother" instance=ExtResource("1_auwde")]
+
+[node name="EyeGlow" parent="." index="0"]
+visible = false
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_fwsfj")
+
+[node name="SpeedComponent" parent="." index="3"]
+script = SubResource("GDScript_i4q2v")
+speed = 1.5
+deceleration = 0.1

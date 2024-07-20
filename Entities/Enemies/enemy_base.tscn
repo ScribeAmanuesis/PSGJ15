@@ -54,6 +54,7 @@ material = SubResource("ShaderMaterial_nl0xk")
 texture = ExtResource("2_20qox")
 
 [node name="Shadow" type="PointLight2D" parent="."]
+visible = false
 energy = 1.55
 blend_mode = 1
 texture = SubResource("GradientTexture2D_voelv")
@@ -66,10 +67,10 @@ texture = ExtResource("2_qyh27")
 script = ExtResource("2_lrhgw")
 
 [node name="HealthComponent" type="Area2D" parent="."]
-visible = false
 script = ExtResource("2_1yfsk")
 
 [node name="Label" type="Label" parent="HealthComponent"]
+visible = false
 top_level = true
 anchors_preset = 8
 anchor_left = 0.5

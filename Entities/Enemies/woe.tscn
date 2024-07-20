@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://di10byji875sa"]
+
+[ext_resource type="PackedScene" uid="uid://87wqpp6umgd" path="res://Entities/Enemies/enemy_base.tscn" id="1_wtkxs"]
+
+[node name="Woe" instance=ExtResource("1_wtkxs")]

@@ -1,4 +1,5 @@
 extends Node2D
+class_name SpeedComponent
 
 @export var SPEED : = 0.5
 
