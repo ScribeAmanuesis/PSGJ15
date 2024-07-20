@@ -1,15 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0oibgnor3jo6"]
+[gd_scene load_steps=11 format=3 uid="uid://b0oibgnor3jo6"]
 
 [ext_resource type="Texture2D" uid="uid://lt8bsio0w4jp" path="res://Assets/Potion_TD_Example.png" id="1_au5v1"]
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_qvj3d"]
+[ext_resource type="Resource" uid="uid://bpalhxs73346f" path="res://Entities/Inventory/player_inventory.tres" id="2_4pbne"]
 [ext_resource type="PackedScene" uid="uid://c2lehdawbgjeu" path="res://potion_order_card.tscn" id="2_ayjxo"]
 [ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="3_nldau"]
 [ext_resource type="Texture2D" uid="uid://dwqe7ek0pf5pf" path="res://Assets/Cauldron.png" id="4_6kefy"]
-[ext_resource type="Script" path="res://Scenes/DraggableObject.gd" id="4_upca7"]
 [ext_resource type="Texture2D" uid="uid://jpabusjgnah8" path="res://Assets/SummonCircle.png" id="5_ijyl4"]
 [ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
+[ext_resource type="PackedScene" uid="uid://buk4e7js2ggj8" path="res://Entities/Inventory/inv_ui.tscn" id="6_xhi5g"]
 [ext_resource type="Script" path="res://Scenes/DropSpot.gd" id="6_ywnau"]
 
 [node name="AlcehmistDesk" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_qvj3d")
+inv = ExtResource("2_4pbne")
 
 [node name="PotionTdExample" type="Sprite2D" parent="."]
 visible = false
@@ -64,14 +70,14 @@ layout_mode = 2
 [node name="MarginContainer6" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
 layout_mode = 2
 
-[node name="PotionShelf" type="Control" parent="Control"]
+[node name="PotionShelf_UI" type="Control" parent="Control"]
 anchors_preset = 0
 offset_left = 696.0
 offset_top = 160.0
 offset_right = 1152.0
 offset_bottom = 312.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PotionShelf"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PotionShelf_UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,70 +85,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/PotionShelf/HBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="Control/PotionShelf_UI/HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureButton" parent="Control/PotionShelf/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-texture_normal = ExtResource("3_nldau")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("4_upca7")
-
-[node name="Label" type="Label" parent="Control/PotionShelf/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/PotionShelf/HBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureButton" parent="Control/PotionShelf/HBoxContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureButton" parent="Control/PotionShelf_UI/HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 texture_normal = ExtResource("3_nldau")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Control/PotionShelf/HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="Control/PotionShelf_UI/HBoxContainer/VBoxContainer4"]
 layout_mode = 2
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="Control/PotionShelf/HBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureButton" parent="Control/PotionShelf/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-texture_normal = ExtResource("3_nldau")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Control/PotionShelf/HBoxContainer/VBoxContainer3"]
-layout_mode = 2
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer4" type="VBoxContainer" parent="Control/PotionShelf/HBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureButton" parent="Control/PotionShelf/HBoxContainer/VBoxContainer4"]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-texture_normal = ExtResource("3_nldau")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Control/PotionShelf/HBoxContainer/VBoxContainer4"]
-layout_mode = 2
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Inv_UI" parent="Control" instance=ExtResource("6_xhi5g")]
+offset_left = 640.0
+offset_top = 96.0
+offset_right = 1152.0
+offset_bottom = 320.0
 
 [node name="Cauldron" type="TextureRect" parent="Control"]
 layout_mode = 0
