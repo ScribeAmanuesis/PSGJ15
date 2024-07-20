@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhhfcux5fcmpd"]
+[gd_scene load_steps=9 format=3 uid="uid://natsowxm50vm"]
 
 [ext_resource type="Texture2D" uid="uid://d082vng60afca" path="res://Assets/jobboard.png" id="1_gxl0n"]
-[ext_resource type="Script" path="res://TopDownPrototype/job_board.gd" id="1_np168"]
+[ext_resource type="Script" path="res://Entities/JobBoard/job_board.gd" id="1_np168"]
 [ext_resource type="Texture2D" uid="uid://b17tccxer0viv" path="res://Assets/requests.png" id="2_kmnsm"]
-[ext_resource type="Script" path="res://TopDownPrototype/Request.gd" id="3_rxkl7"]
+[ext_resource type="Script" path="res://Entities/JobBoard/Request.gd" id="3_rxkl7"]
 [ext_resource type="Texture2D" uid="uid://dvovauqfa8jrk" path="res://Assets/FamiliarCat.png" id="5_l3oqm"]
 [ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="6_a0ci1"]
-[ext_resource type="Script" path="res://TopDownPrototype/Details.gd" id="7_k8tc7"]
+[ext_resource type="Script" path="res://Entities/JobBoard/Details.gd" id="7_k8tc7"]
 
 [sub_resource type="GDScript" id="GDScript_wd0nn"]
 script/source = "extends Sprite2D

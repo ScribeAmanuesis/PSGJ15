@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0oibgnor3jo6"]
+[gd_scene load_steps=12 format=3 uid="uid://b0oibgnor3jo6"]
 
 [ext_resource type="Texture2D" uid="uid://lt8bsio0w4jp" path="res://Assets/Potion_TD_Example.png" id="1_au5v1"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_qvj3d"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
 [ext_resource type="PackedScene" uid="uid://buk4e7js2ggj8" path="res://Entities/Inventory/inv_ui.tscn" id="6_xhi5g"]
 [ext_resource type="Script" path="res://Scenes/DropSpot.gd" id="6_ywnau"]
+[ext_resource type="PackedScene" uid="uid://natsowxm50vm" path="res://Scenes/job_board.tscn" id="11_62kji"]
 
 [node name="AlcehmistDesk" type="Node2D"]
 
@@ -34,6 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PotionOrders" type="Control" parent="Control"]
+visible = false
 clip_contents = true
 anchors_preset = 0
 offset_left = 80.0
@@ -147,3 +149,6 @@ offset_right = 632.0
 offset_bottom = 584.0
 texture_normal = ExtResource("6_5gb5f")
 stretch_mode = 0
+
+[node name="JobBoard" parent="." instance=ExtResource("11_62kji")]
+position = Vector2(-21, -5)
