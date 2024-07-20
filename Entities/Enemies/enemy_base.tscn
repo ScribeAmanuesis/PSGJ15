@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://87wqpp6umgd"]
+
+[ext_resource type="Script" path="res://Entities/Enemies/Enemy.gd" id="1_iqti4"]
+[ext_resource type="Script" path="res://Components/HealthComponent.gd" id="2_1yfsk"]
+[ext_resource type="Texture2D" uid="uid://b50uh6i664ya7" path="res://Assets/EnemyWoeGlow.png" id="2_20qox"]
+[ext_resource type="Script" path="res://Components/PathSpeedComponent.gd" id="2_lrhgw"]
+[ext_resource type="Texture2D" uid="uid://cmbo27kdirt0" path="res://Assets/EnemyWoe.png" id="2_qyh27"]
+
+[sub_resource type="Shader" id="Shader_lniv2"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	if (color.r < 0.5){
+		COLOR.a = 0.0;
+	} else {
+		COLOR = color;
+	}
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nl0xk"]
+shader = SubResource("Shader_lniv2")
+
+[sub_resource type="Gradient" id="Gradient_plprh"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_voelv"]
+gradient = SubResource("Gradient_plprh")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.2)
+metadata/_snap_enabled = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64ef5"]
+radius = 16.0
+
+[node name="Enemy" type="PathFollow2D"]
+rotates = false
+script = ExtResource("1_iqti4")
+
+[node name="EyeGlow" type="PointLight2D" parent="."]
+material = SubResource("ShaderMaterial_nl0xk")
+texture = ExtResource("2_20qox")
+
+[node name="Shadow" type="PointLight2D" parent="."]
+energy = 1.55
+blend_mode = 1
+texture = SubResource("GradientTexture2D_voelv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(2, 2, 2, 1)
+texture = ExtResource("2_qyh27")
+
+[node name="SpeedComponent" type="Node2D" parent="."]
+script = ExtResource("2_lrhgw")
+
+[node name="HealthComponent" type="Area2D" parent="."]
+visible = false
+script = ExtResource("2_1yfsk")
+
+[node name="Label" type="Label" parent="HealthComponent"]
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -616.0
+offset_top = -372.0
+offset_right = -537.0
+offset_bottom = -349.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Health: 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent"]
+shape = SubResource("CircleShape2D_64ef5")

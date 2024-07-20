@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0oibgnor3jo6"]
+[gd_scene load_steps=9 format=3 uid="uid://b0oibgnor3jo6"]
 
 [ext_resource type="Texture2D" uid="uid://lt8bsio0w4jp" path="res://Assets/Potion_TD_Example.png" id="1_au5v1"]
 [ext_resource type="PackedScene" uid="uid://c2lehdawbgjeu" path="res://potion_order_card.tscn" id="2_ayjxo"]
 [ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="3_nldau"]
 [ext_resource type="Texture2D" uid="uid://dwqe7ek0pf5pf" path="res://Assets/Cauldron.png" id="4_6kefy"]
+[ext_resource type="Script" path="res://Scenes/DraggableObject.gd" id="4_upca7"]
 [ext_resource type="Texture2D" uid="uid://jpabusjgnah8" path="res://Assets/SummonCircle.png" id="5_ijyl4"]
 [ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
+[ext_resource type="Script" path="res://Scenes/DropSpot.gd" id="6_ywnau"]
 
 [node name="AlcehmistDesk" type="Node2D"]
 
@@ -86,6 +88,7 @@ layout_mode = 2
 texture_normal = ExtResource("3_nldau")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("4_upca7")
 
 [node name="Label" type="Label" parent="Control/PotionShelf/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -149,6 +152,14 @@ offset_right = 360.0
 offset_bottom = 616.0
 texture = ExtResource("4_6kefy")
 
+[node name="DropList" type="HBoxContainer" parent="Control/Cauldron"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 112.0
+offset_right = 288.0
+offset_bottom = 200.0
+script = ExtResource("6_ywnau")
+
 [node name="SummoningCircle" type="TextureRect" parent="Control"]
 layout_mode = 0
 offset_left = 672.0
@@ -156,6 +167,14 @@ offset_top = 352.0
 offset_right = 1136.0
 offset_bottom = 616.0
 texture = ExtResource("5_ijyl4")
+
+[node name="DropList" type="HBoxContainer" parent="Control/SummoningCircle"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 112.0
+offset_right = 432.0
+offset_bottom = 200.0
+script = ExtResource("6_ywnau")
 
 [node name="RecipeBook" type="TextureButton" parent="Control"]
 layout_mode = 0

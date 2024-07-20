@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b4qnvgdco6wq3"]
 
-[ext_resource type="Script" path="res://Entities/Tower.gd" id="1_4d7qr"]
+[ext_resource type="Script" path="res://Entities/Towers/Tower.gd" id="1_4d7qr"]
 [ext_resource type="PackedScene" uid="uid://btxb36gs2gjle" path="res://Entities/bullet.tscn" id="1_nxhx8"]
 [ext_resource type="Script" path="res://Effects/ShootAt.gd" id="2_lhbt0"]
 
@@ -27,7 +27,6 @@ script = ExtResource("1_4d7qr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sttef")
-disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_logy6")
