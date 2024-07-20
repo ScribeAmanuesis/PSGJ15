@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://djvu1vrl68rpr"]
+[gd_scene load_steps=17 format=3 uid="uid://djvu1vrl68rpr"]
 
 [ext_resource type="Texture2D" uid="uid://cb3mop4wy18pg" path="res://Assets/AlchemyShadowPack_AutoTile.png" id="1_5l7cl"]
 [ext_resource type="Texture2D" uid="uid://dw2bcx53cqr67" path="res://Assets/AlchemyShadowPack_Basic.png" id="1_ac2rv"]
 [ext_resource type="Script" path="res://character_controller.gd" id="1_fgn75"]
-[ext_resource type="PackedScene" uid="uid://b4qnvgdco6wq3" path="res://Entities/Towers/tower_base.tscn" id="3_85lpe"]
+[ext_resource type="PackedScene" uid="uid://cap3eukwwq6js" path="res://Entities/Towers/Salamander.tscn" id="4_r8e3r"]
 [ext_resource type="PackedScene" uid="uid://dwl8tsgpesjlp" path="res://Entities/Enemies/bother.tscn" id="5_lbx4t"]
 [ext_resource type="PackedScene" uid="uid://bnivg5ejn1i6y" path="res://Entities/Enemies/worry.tscn" id="5_myiam"]
 [ext_resource type="PackedScene" uid="uid://d0ua05mj1dtkx" path="res://Entities/Enemies/fret.tscn" id="6_6vpap"]
@@ -138,19 +138,6 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0.1)
 metadata/_snap_enabled = true
 
-[sub_resource type="Gradient" id="Gradient_6mj4o"]
-interpolation_mode = 2
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gh3yl"]
-gradient = SubResource("Gradient_6mj4o")
-width = 320
-height = 320
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.2, 0.2)
-metadata/_snap_enabled = true
-
 [sub_resource type="Curve2D" id="Curve2D_xseut"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -1152, 80, 0, 0, 0, 0, -976, 80, 0, 0, 0, 0, -976, -48, 0, 0, 0, 0, -816, -48, 0, 0, 0, 0, -816, -208, 0, 0, 0, 0, -592, -208, 0, 0, 0, 0, -592, 208, 0, 0, 0, 0, -176, 208, 0, 0, 0, 0, -176, 80, 0, 0, 0, 0, -272, 80, 0, 0, 0, 0, -272, -16, 0, 0, 0, 0, -176, -16, 0, 0, 0, 0, -176, -80, 0, 0, 0, 0, -272, -80, 0, 0, 0, 0, -272, -176, 0, 0, 0, 0, -16, -176, 0, 0, 0, 0, 0, -176)
@@ -187,11 +174,8 @@ texture = SubResource("GradientTexture2D_2xy22")
 [node name="Towers" type="Node2D" parent="."]
 position = Vector2(528, 8)
 
-[node name="Tower" parent="Towers" instance=ExtResource("3_85lpe")]
-position = Vector2(48, 440)
-
-[node name="PointLight2D" type="PointLight2D" parent="Towers/Tower"]
-texture = SubResource("GradientTexture2D_gh3yl")
+[node name="Salamander" parent="Towers" instance=ExtResource("4_r8e3r")]
+position = Vector2(-224, 232)
 
 [node name="TownEntrance" type="Node2D" parent="."]
 position = Vector2(1152, 320)

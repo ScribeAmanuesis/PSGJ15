@@ -6,7 +6,7 @@ class_name HealthComponent
 
 signal dead
 
-func hit(damage : int, knockback : Vector2):
+func hit(damage : int):
 	health -= damage
 	if health <= 0:
 		dead.emit()

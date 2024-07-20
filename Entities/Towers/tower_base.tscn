@@ -1,8 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4qnvgdco6wq3"]
+[gd_scene load_steps=7 format=3 uid="uid://b4qnvgdco6wq3"]
 
 [ext_resource type="Script" path="res://Entities/Towers/Tower.gd" id="1_4d7qr"]
-[ext_resource type="PackedScene" uid="uid://btxb36gs2gjle" path="res://Entities/bullet.tscn" id="1_nxhx8"]
-[ext_resource type="Script" path="res://Effects/ShootAt.gd" id="2_lhbt0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sttef"]
 
@@ -19,8 +17,16 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0.1)
 metadata/_snap_enabled = true
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sl1ki"]
-radius = 192.167
+[sub_resource type="Gradient" id="Gradient_31asw"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cshjm"]
+gradient = SubResource("Gradient_31asw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.9)
+metadata/_snap_enabled = true
 
 [node name="Tower" type="StaticBody2D"]
 script = ExtResource("1_4d7qr")
@@ -33,12 +39,7 @@ texture = SubResource("GradientTexture2D_logy6")
 
 [node name="Effects" type="Node2D" parent="."]
 
-[node name="ShootAt" type="Node2D" parent="Effects" node_paths=PackedStringArray("collision_exceptions")]
-script = ExtResource("2_lhbt0")
-bullet_scene = ExtResource("1_nxhx8")
-collision_exceptions = [NodePath("../../Range")]
-
 [node name="Range" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
-shape = SubResource("CircleShape2D_sl1ki")
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_cshjm")

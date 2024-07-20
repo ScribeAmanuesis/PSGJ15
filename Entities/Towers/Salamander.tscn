@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cap3eukwwq6js"]
+
+[ext_resource type="PackedScene" uid="uid://b4qnvgdco6wq3" path="res://Entities/Towers/tower_base.tscn" id="1_gw8gk"]
+[ext_resource type="Script" path="res://Effects/DamageTarget.gd" id="2_d0y3t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjnfu"]
+radius = 64.0
+
+[node name="Salamander" instance=ExtResource("1_gw8gk")]
+cooldown = 0.5
+targeting_order = 1
+
+[node name="DamageTarget" type="Node2D" parent="Effects" index="0"]
+script = ExtResource("2_d0y3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" index="0"]
+shape = SubResource("CircleShape2D_vjnfu")

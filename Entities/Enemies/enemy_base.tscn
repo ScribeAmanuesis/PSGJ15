@@ -70,7 +70,6 @@ script = ExtResource("2_lrhgw")
 script = ExtResource("2_1yfsk")
 
 [node name="Label" type="Label" parent="HealthComponent"]
-visible = false
 top_level = true
 anchors_preset = 8
 anchor_left = 0.5

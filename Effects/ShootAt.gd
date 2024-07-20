@@ -1,8 +1,9 @@
 extends Effect
 
-@export var bullet_scene : PackedScene
+@export var bullet_scene : PackedScene = preload("res://Entities/bullet.tscn")
 @export var bullet_speed : = 1000.0
-@export var collision_exceptions : Array[Node2D]
+@export var collision_exceptions : Array[Node2D] 
+@export var bullet_pierce : = 1
 
 #func _get_configuration_warnings():
 	#if bullet_scene == null:
@@ -19,4 +20,5 @@ func shoot_at(target : Object):
 	add_sibling(bullet)
 	var dir : = global_position.direction_to(pos)
 	bullet.global_position = global_position + (dir * 16)
+	bullet.pierce = bullet_pierce
 	bullet.apply_central_impulse(dir * bullet_speed) 
