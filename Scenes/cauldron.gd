@@ -8,8 +8,10 @@ extends Node2D
 @onready var cancel: Button = $Cancel
 @onready var ingredientUsed: Array = [ingredient1, ingredient2, ingredient3]
 
+var recipeFound: bool = false
 
-var recipeLooper = 0
+#Notification Scene
+@onready var craftingNotification: Control = get_node("Notification")
 
 #Getting the ingredients information
 var cinnabar: InvItem = preload("res://Entities/Inventory/Items/cinnabar.tres")
@@ -19,20 +21,27 @@ var soul: InvItem = preload("res://Entities/Inventory/Items/soul.tres")
 var sulfur: InvItem = preload("res://Entities/Inventory/Items/sulfur.tres")
 @export var ingredients_legend: Array[InvItem] = [cinnabar,mercury,salt,soul,sulfur]
 
+
+#Getting the Potion information
+var healthPotion: InvItem = preload("res://Entities/Inventory/Items/health_potion.tres")
+var ragePotion: InvItem = preload("res://Entities/Inventory/Items/rage_potion.tres")
+var slimePotion: InvItem = preload("res://Entities/Inventory/Items/slime_potion.tres")
 #Recipes
-var ragePotion = {"Cinnabar": 2, "Mercury": 1, "Salt": 0, "Souls": 0, "Sulfur": 0}
-var slimePotion = {"Cinnabar": 1, "Mercury": 1 , "Salt": 1, "Souls": 0, "Sulfur": 0}
-var healthPotion = {"Cinnabar": 0, "Mercury": 1 , "Salt": 1, "Souls": 1, "Sulfur": 0}
+var ragePot = {"Cinnabar": 2, "Mercury": 1, "Salt": 0, "Souls": 0, "Sulfur": 0}
+var slimePot = {"Cinnabar": 1, "Mercury": 1 , "Salt": 1, "Souls": 0, "Sulfur": 0}
+var healthPot = {"Cinnabar": 0, "Mercury": 1 , "Salt": 1, "Souls": 1, "Sulfur": 0}
 
 #RecipeNames
-var recipeNames: Array = ["ragePotion", "slimePotion", "healthPotion"]
-var recipes = [ragePotion, slimePotion, healthPotion]
+var recipeNames: Array = ["Rage Potion", "Slime Potion", "Health Potion"]
+
+var recipenNameToItem: Dictionary = {"Rage Potion": ragePotion, "Slime Potion": slimePotion, "Health Potion": healthPotion}
+var recipes = [ragePot, slimePot, healthPot]
 
 var ingredientList: Dictionary = {"Cinnabar": 0, "Mercury": 0, "Salt": 0, "Souls": 0, "Sulfur": 0}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	craftingNotification.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,7 +60,8 @@ func handleCraftVisibility():
 		craft.visible = true
 	else:
 		craft.visible = false
-		
+
+
 #func checkRecipe(first, second, third)
 #TODO
 #ADD CRAFTING SYSTEM CHECKING IF VALID RECIPE THEN HAVE POPUP WITH CRAFTING IF POSSIBLE
@@ -84,5 +94,13 @@ func _on_craft_pressed():
 		#Recipe matching
 		for i in range(len(recipes)):
 			if(recipes[i] == ingredientList):
+				recipeFound = true
 				print("recipe found!")
 				print("recipe name is " + str(recipeNames[i]))
+				craftingNotification.get_node("Panel").get_node("Potion").texture = recipenNameToItem[recipeNames[i]].texture
+				craftingNotification.visible = true
+				
+				ingredient1.texture = null
+				ingredient2.texture = null
+				ingredient3.texture = null
+				

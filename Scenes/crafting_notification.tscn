@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmwjy7fusol0p"]
+
+[ext_resource type="Script" path="res://Scenes/crafting_notification.gd" id="1_1aol4"]
+[ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="1_153ll"]
+
+[node name="Notification" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1aol4")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(64, 96)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -133.5
+offset_right = 195.0
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 389.0
+offset_bottom = 265.0
+color = Color(0.758642, 0.555209, 0.351091, 1)
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 24.0
+offset_right = 263.0
+offset_bottom = 47.0
+text = "Crafting Successful"
+
+[node name="Potion" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 74.0
+offset_right = 240.0
+offset_bottom = 184.0
+texture = ExtResource("1_153ll")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 220.0
+offset_right = 231.0
+offset_bottom = 251.0
+text = "Continue"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

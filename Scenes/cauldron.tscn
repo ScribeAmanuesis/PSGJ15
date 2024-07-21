@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci4a767mt5ixe"]
+[gd_scene load_steps=5 format=3 uid="uid://ci4a767mt5ixe"]
 
 [ext_resource type="Texture2D" uid="uid://dwqe7ek0pf5pf" path="res://Assets/Cauldron.png" id="1_7nn3a"]
 [ext_resource type="Script" path="res://Scenes/cauldron.gd" id="1_phngj"]
 [ext_resource type="PackedScene" uid="uid://cing77uuftcak" path="res://Scenes/draganddroptest.tscn" id="2_hw2t6"]
+[ext_resource type="PackedScene" uid="uid://bmwjy7fusol0p" path="res://Scenes/crafting_notification.tscn" id="4_6fja6"]
 
 [node name="Cauldron" type="Node2D"]
 script = ExtResource("1_phngj")
@@ -62,6 +63,12 @@ offset_top = -209.0
 offset_right = 101.0
 offset_bottom = -178.0
 text = "Cancel"
+
+[node name="Notification" parent="." instance=ExtResource("4_6fja6")]
+offset_left = 1.0
+offset_top = -289.0
+offset_right = 1.0
+offset_bottom = -289.0
 
 [connection signal="pressed" from="Craft" to="." method="_on_craft_pressed"]
 [connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]

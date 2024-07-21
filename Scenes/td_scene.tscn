@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dwl8tsgpesjlp" path="res://Entities/Enemies/bother.tscn" id="5_lbx4t"]
 [ext_resource type="PackedScene" uid="uid://bnivg5ejn1i6y" path="res://Entities/Enemies/worry.tscn" id="5_myiam"]
 [ext_resource type="PackedScene" uid="uid://d0ua05mj1dtkx" path="res://Entities/Enemies/fret.tscn" id="6_6vpap"]
-[ext_resource type="PackedScene" uid="uid://dlqtuv7yi8dwk" path="res://Entities/Towers/cat.tscn" id="6_yj5mm"]
-[ext_resource type="PackedScene" uid="uid://86gn0kqf2286" path="res://Entities/Towers/pixie.tscn" id="7_tlpxl"]
+[ext_resource type="PackedScene" path="res://Entities/Towers/cat.tscn" id="6_yj5mm"]
+[ext_resource type="PackedScene" path="res://Entities/Towers/pixie.tscn" id="7_tlpxl"]
 [ext_resource type="PackedScene" uid="uid://di10byji875sa" path="res://Entities/Enemies/woe.tscn" id="8_85ngv"]
 
 [sub_resource type="Environment" id="Environment_drkys"]
@@ -217,4 +217,4 @@ position = Vector2(-1, 320)
 position = Vector2(-1, 320)
 
 [node name="Woe" parent="PathStart/TDPath" instance=ExtResource("8_85ngv")]
-position = Vector2(0, 320)
+position = Vector2(-1, 320)
