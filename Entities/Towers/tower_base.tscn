@@ -19,7 +19,7 @@ metadata/_snap_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_31asw"]
 offsets = PackedFloat32Array(0, 0.4, 0.8, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.768627, 0.768627, 0.768627, 0.0392157, 0.768627, 0.768627, 0.768627, 0.0392157, 0, 0, 0, 0)
+colors = PackedColorArray(1, 1, 1, 1, 0.768627, 0.768627, 0.768627, 0.0196078, 0.768627, 0.768627, 0.768627, 0.0196078, 0, 0, 0, 0)
 metadata/_snap_enabled = true
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cshjm"]
@@ -32,6 +32,7 @@ fill_to = Vector2(0.8, 0.8)
 metadata/_snap_enabled = true
 
 [node name="Tower" type="StaticBody2D"]
+collision_layer = 2
 script = ExtResource("1_4d7qr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -43,6 +44,8 @@ texture = SubResource("GradientTexture2D_logy6")
 [node name="Effects" type="Node2D" parent="."]
 
 [node name="Range" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 texture = SubResource("GradientTexture2D_cshjm")
+texture_scale = 8.0

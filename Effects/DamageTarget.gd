@@ -3,6 +3,6 @@ extends Effect
 @export var damage : = 1
 
 func activate(target : Object):
-	if target is HealthComponent:	
-		target.hit(damage)
+	if target is CollisionComponent:
+		target.get_body().hit(damage)
 

@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://87wqpp6umgd" path="res://Entities/Enemies/enemy_base.tscn" id="1_wtkxs"]
 
 [node name="Woe" instance=ExtResource("1_wtkxs")]
+
+[node name="SpeedComponent" parent="." index="4"]
+speed = 1.0

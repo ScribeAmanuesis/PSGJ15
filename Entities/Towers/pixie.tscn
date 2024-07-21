@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://86gn0kqf2286"]
+
+[ext_resource type="PackedScene" uid="uid://b4qnvgdco6wq3" path="res://Entities/Towers/tower_base.tscn" id="1_xfinh"]
+[ext_resource type="Script" path="res://Effects/SlowTarget.gd" id="2_ksuwa"]
+[ext_resource type="Script" path="res://Effects/EmitParticles.gd" id="2_u745d"]
+[ext_resource type="Texture2D" uid="uid://c2c68wig2ljcs" path="res://Assets/Particles/star_02.png" id="3_sfli4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0x80y"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_uderc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.22169, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jyv30"]
+curve = SubResource("Curve_uderc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bl0if"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+scale_min = 0.05
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_jyv30")
+color = Color(1, 0.929412, 0.411765, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_at2g5"]
+radius = 96.0
+
+[node name="Pixie" instance=ExtResource("1_xfinh")]
+targeting_order = 1
+
+[node name="SlowTarget" type="Node2D" parent="Effects" index="0"]
+script = ExtResource("2_ksuwa")
+
+[node name="EmitParticles" type="Node2D" parent="Effects" index="1"]
+script = ExtResource("2_u745d")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Effects/EmitParticles" index="0"]
+material = SubResource("CanvasItemMaterial_0x80y")
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_bl0if")
+texture = ExtResource("3_sfli4")
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" index="0"]
+shape = SubResource("CircleShape2D_at2g5")
+
+[node name="PointLight2D" parent="." index="4"]
+energy = 5.0

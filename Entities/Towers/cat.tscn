@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlqtuv7yi8dwk"]
+
+[ext_resource type="PackedScene" uid="uid://b4qnvgdco6wq3" path="res://Entities/Towers/tower_base.tscn" id="1_8mkdc"]
+[ext_resource type="Script" path="res://Effects/DamageTarget.gd" id="2_3ewn7"]
+[ext_resource type="Script" path="res://Effects/EmitParticles.gd" id="3_g0vqt"]
+[ext_resource type="Texture2D" uid="uid://cwqhnf56a2vda" path="res://Assets/Particles/scratch_01.png" id="4_stavw"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d7d3l"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_7hdtv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.493333, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_hgrh8"]
+curve = SubResource("Curve_7hdtv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7qc25"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_hgrh8")
+color = Color(1, 0.0313726, 0.0313726, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hito"]
+radius = 64.0
+
+[node name="Cat" instance=ExtResource("1_8mkdc")]
+cooldown = 0.25
+
+[node name="DamageTarget" type="Node2D" parent="Effects" index="0"]
+script = ExtResource("2_3ewn7")
+
+[node name="EmitParticles" type="Node2D" parent="Effects" index="1"]
+script = ExtResource("3_g0vqt")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Effects/EmitParticles" index="0"]
+material = SubResource("CanvasItemMaterial_d7d3l")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_7qc25")
+texture = ExtResource("4_stavw")
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" index="0"]
+shape = SubResource("CircleShape2D_0hito")

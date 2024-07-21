@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @export var pierce : = 3
+@export var ttl : = INF
 
 @onready var hit_area : = $Area2D
 @onready var effects : = $Effects
@@ -9,6 +10,9 @@ var already_hit : = []
 var collision_exceptions : = []
 
 func _physics_process(delta):
+	ttl -= delta 
+	if ttl < 0:
+		queue_free()
 	if hit_area.has_overlapping_areas():
 		var areas : Array = hit_area.get_overlapping_areas()
 		for area in areas:

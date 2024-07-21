@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://btxb36gs2gjle"]
+[gd_scene load_steps=13 format=3 uid="uid://btxb36gs2gjle"]
 
 [ext_resource type="Script" path="res://Entities/Bullet.gd" id="1_ryl6r"]
 [ext_resource type="Script" path="res://Effects/DamageTarget.gd" id="2_ykrgf"]
+[ext_resource type="Script" path="res://Effects/EmitParticles.gd" id="3_if3ph"]
+[ext_resource type="Texture2D" uid="uid://0vgwspr7xbv2" path="res://Assets/Particles/flame_01.png" id="4_e0e6x"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o0shd"]
 friction = 0.0
@@ -12,6 +14,34 @@ height = 8
 invert = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g6g3g"]
+
+[sub_resource type="Gradient" id="Gradient_hflmr"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.516393, 0.721311, 1)
+colors = PackedColorArray(0.8, 0.00799999, 0.00799999, 1, 0.86, 0.482747, 0.0516, 1, 0.95, 0.937175, 0.1805, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b4mgu"]
+gradient = SubResource("Gradient_hflmr")
+
+[sub_resource type="Curve" id="Curve_o04m3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.22169, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rjt04"]
+curve = SubResource("Curve_o04m3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_237gt"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+scale_min = 0.01
+scale_max = 0.05
+scale_curve = SubResource("CurveTexture_rjt04")
+color = Color(1, 0.54902, 0.270588, 1)
+color_ramp = SubResource("GradientTexture1D_b4mgu")
 
 [node name="Bullet" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_o0shd")
@@ -35,3 +65,16 @@ shape = SubResource("CircleShape2D_g6g3g")
 
 [node name="DamageTarget" type="Node2D" parent="Effects"]
 script = ExtResource("2_ykrgf")
+
+[node name="ParticleEffect" type="Node2D" parent="Effects"]
+script = ExtResource("3_if3ph")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Effects/ParticleEffect"]
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_237gt")
+texture = ExtResource("4_e0e6x")
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0

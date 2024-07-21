@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://87wqpp6umgd"]
+[gd_scene load_steps=12 format=3 uid="uid://87wqpp6umgd"]
 
 [ext_resource type="Script" path="res://Entities/Enemies/Enemy.gd" id="1_iqti4"]
 [ext_resource type="Script" path="res://Components/HealthComponent.gd" id="2_1yfsk"]
 [ext_resource type="Texture2D" uid="uid://b50uh6i664ya7" path="res://Assets/EnemyWoeGlow.png" id="2_20qox"]
 [ext_resource type="Script" path="res://Components/PathSpeedComponent.gd" id="2_lrhgw"]
 [ext_resource type="Texture2D" uid="uid://cmbo27kdirt0" path="res://Assets/EnemyWoe.png" id="2_qyh27"]
+[ext_resource type="Script" path="res://Components/CollisionComponent.gd" id="4_fupc3"]
 
 [sub_resource type="Shader" id="Shader_lniv2"]
 code = "shader_type canvas_item;
@@ -44,7 +45,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.9, 0.2)
 metadata/_snap_enabled = true
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_64ef5"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_5kog6"]
 radius = 16.0
 
 [node name="Enemy" type="PathFollow2D"]
@@ -66,10 +67,17 @@ blend_mode = 1
 texture = SubResource("GradientTexture2D_voelv")
 texture_scale = 8.0
 
+[node name="Collision" type="Area2D" parent="." node_paths=PackedStringArray("parent")]
+script = ExtResource("4_fupc3")
+parent = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+shape = SubResource("CircleShape2D_5kog6")
+
 [node name="SpeedComponent" type="Node2D" parent="."]
 script = ExtResource("2_lrhgw")
 
-[node name="HealthComponent" type="Area2D" parent="."]
+[node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("2_1yfsk")
 
 [node name="Label" type="Label" parent="HealthComponent"]
@@ -89,6 +97,3 @@ grow_vertical = 2
 text = "Health: 10"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent"]
-shape = SubResource("CircleShape2D_64ef5")

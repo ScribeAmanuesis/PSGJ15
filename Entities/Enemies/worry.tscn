@@ -3,16 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://87wqpp6umgd" path="res://Entities/Enemies/enemy_base.tscn" id="1_h11h3"]
 [ext_resource type="Texture2D" uid="uid://dj2upwftvdd3s" path="res://Assets/EnemyWorry.png" id="2_3lj65"]
 
-[sub_resource type="GDScript" id="GDScript_vv764"]
-script/source = "extends Node2D
+[sub_resource type="GDScript" id="GDScript_pexlf"]
+script/source = "extends SpeedComponent
 
-@export var speed : = 0.1
 @export var acceleration : = 0.1
 
-
 func _process(delta):
-	var parent : PathFollow2D = get_parent()
-	parent.progress += speed
+	super._process(delta)
 	speed += acceleration * delta
 	speed = min(1.5, speed)
 "
@@ -20,13 +17,11 @@ func _process(delta):
 [node name="Worry" instance=ExtResource("1_h11h3")]
 
 [node name="EyeGlow" parent="." index="0"]
-visible = false
 energy = 1.2
 
-[node name="Sprite2D" parent="." index="2"]
+[node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_3lj65")
 
-[node name="SpeedComponent" parent="." index="3"]
-script = SubResource("GDScript_vv764")
-speed = 0.1
+[node name="SpeedComponent" parent="." index="4"]
+script = SubResource("GDScript_pexlf")
 acceleration = 0.1

@@ -1,7 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://cap3eukwwq6js"]
+[gd_scene load_steps=12 format=3 uid="uid://cap3eukwwq6js"]
 
 [ext_resource type="PackedScene" uid="uid://b4qnvgdco6wq3" path="res://Entities/Towers/tower_base.tscn" id="1_gw8gk"]
 [ext_resource type="Script" path="res://Effects/DamageTarget.gd" id="2_d0y3t"]
+[ext_resource type="Script" path="res://Effects/EmitParticles.gd" id="3_lntnd"]
+[ext_resource type="Texture2D" uid="uid://0vgwspr7xbv2" path="res://Assets/Particles/flame_01.png" id="4_sok3x"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q3hqr"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_c1exs"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.516393, 0.721311, 1)
+colors = PackedColorArray(3, 0.008, 0.008, 1, 1, 0.34, 0.1, 1, 0.95, 0.937175, 0.1805, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_avph8"]
+gradient = SubResource("Gradient_c1exs")
+
+[sub_resource type="Curve" id="Curve_uwcd7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.22169, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_h1jcw"]
+curve = SubResource("Curve_uwcd7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_egk5i"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+scale_min = 0.05
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_h1jcw")
+color = Color(1, 0.54902, 0.270588, 1)
+color_ramp = SubResource("GradientTexture1D_avph8")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vjnfu"]
 radius = 64.0
@@ -13,9 +46,20 @@ targeting_order = 1
 [node name="DamageTarget" type="Node2D" parent="Effects" index="0"]
 script = ExtResource("2_d0y3t")
 
+[node name="EmitParticles" type="Node2D" parent="Effects" index="1"]
+script = ExtResource("3_lntnd")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Effects/EmitParticles" index="0"]
+material = SubResource("CanvasItemMaterial_q3hqr")
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_egk5i")
+texture = ExtResource("4_sok3x")
+lifetime = 0.5
+one_shot = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" index="0"]
 shape = SubResource("CircleShape2D_vjnfu")
 
 [node name="PointLight2D" parent="." index="4"]
 energy = 2.0
-texture_scale = 8.0
