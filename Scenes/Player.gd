@@ -14,19 +14,13 @@ var sulfur: InvItem = preload("res://Entities/Inventory/Items/sulfur.tres")
 
 func _ready():
 	#for i in ingredients_legend:
-	for i in range(10):
-		collect(ingredients_legend.pick_random())
+	#for i in range(10):
+		#collect(ingredients_legend.pick_random())
 	#collect(cinnabar)
 	pass
 
 func collect(item):
 	inv.insert(item)
-
-
-func _on_texture_rect_mouse_entered():
-	for i in range(10):
-		collect(ingredients_legend.pick_random())
-
 
 func _on_placeholder_inventory_increment_mouse_entered():
 	for i in range(10):

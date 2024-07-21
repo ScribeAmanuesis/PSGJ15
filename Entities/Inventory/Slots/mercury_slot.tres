@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvSlot" load_steps=3 format=3 uid="uid://b6a7bx1anhqpl"]
+
+[ext_resource type="Resource" uid="uid://6i55opisnq2n" path="res://Entities/Inventory/Items/mercury.tres" id="1_agvin"]
+[ext_resource type="Script" path="res://Entities/Inventory/inv_slot.gd" id="2_yu10n"]
+
+[resource]
+script = ExtResource("2_yu10n")
+item = ExtResource("1_agvin")
+quantity = 0
