@@ -33,7 +33,9 @@ shader = SubResource("Shader_lniv2")
 
 [sub_resource type="Gradient" id="Gradient_plprh"]
 interpolation_mode = 2
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.064, 0.064, 0.064, 0.064, 0, 0, 0, 0)
+metadata/_snap_enabled = true
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_voelv"]
 gradient = SubResource("Gradient_plprh")
@@ -50,18 +52,19 @@ rotates = false
 script = ExtResource("1_iqti4")
 
 [node name="EyeGlow" type="PointLight2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_nl0xk")
 texture = ExtResource("2_20qox")
-
-[node name="Shadow" type="PointLight2D" parent="."]
-visible = false
-energy = 1.55
-blend_mode = 1
-texture = SubResource("GradientTexture2D_voelv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(2, 2, 2, 1)
 texture = ExtResource("2_qyh27")
+
+[node name="Shadow" type="PointLight2D" parent="."]
+visible = false
+blend_mode = 1
+texture = SubResource("GradientTexture2D_voelv")
+texture_scale = 8.0
 
 [node name="SpeedComponent" type="Node2D" parent="."]
 script = ExtResource("2_lrhgw")
@@ -70,6 +73,7 @@ script = ExtResource("2_lrhgw")
 script = ExtResource("2_1yfsk")
 
 [node name="Label" type="Label" parent="HealthComponent"]
+visible = false
 top_level = true
 anchors_preset = 8
 anchor_left = 0.5

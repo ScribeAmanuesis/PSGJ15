@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://lt8bsio0w4jp" path="res://Assets/Potion_TD_Example.png" id="1_au5v1"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_qvj3d"]
-[ext_resource type="Resource" uid="uid://bpalhxs73346f" path="res://Entities/Inventory/player_ingredient_inventory.tres" id="2_4pbne"]
+[ext_resource type="Resource" uid="uid://bsrxjy7rqjyj1" path="res://Entities/Inventory/player_inventorybak.tres" id="2_4pbne"]
 [ext_resource type="PackedScene" uid="uid://c2lehdawbgjeu" path="res://potion_order_card.tscn" id="2_ayjxo"]
 [ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="3_nldau"]
 [ext_resource type="Texture2D" uid="uid://dwqe7ek0pf5pf" path="res://Assets/Cauldron.png" id="4_6kefy"]
@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
 [ext_resource type="PackedScene" uid="uid://buk4e7js2ggj8" path="res://Entities/Inventory/inv_ui.tscn" id="6_xhi5g"]
 [ext_resource type="Script" path="res://Scenes/DropSpot.gd" id="6_ywnau"]
-[ext_resource type="PackedScene" uid="uid://natsowxm50vm" path="res://Scenes/job_board.tscn" id="11_62kji"]
+[ext_resource type="PackedScene" path="res://Scenes/job_board.tscn" id="11_62kji"]
 [ext_resource type="Texture2D" uid="uid://dc0uqeqysy56e" path="res://Assets/Ingredient.png" id="11_jyxkt"]
-[ext_resource type="PackedScene" uid="uid://ci4a767mt5ixe" path="res://Scenes/cauldron.tscn" id="13_rgf4r"]
+[ext_resource type="PackedScene" path="res://Scenes/cauldron.tscn" id="13_rgf4r"]
 
 [node name="AlcehmistDesk" type="Node2D"]
 

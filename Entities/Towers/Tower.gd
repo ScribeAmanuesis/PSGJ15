@@ -24,7 +24,6 @@ func _process(delta):
 	cooldown_timer += delta
 	if cooldown_timer >= cooldown and range.has_overlapping_areas():
 		var targets : = get_targets()
-		print(targets)
 		for effect in effects.get_children():
 			if effect is Effect:
 				for target in targets:
