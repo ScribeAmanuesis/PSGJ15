@@ -19,28 +19,9 @@ func _input(event):
 
 func handleVisibility():
 	currentNodeName = get_parent().name
-	print(currentNodeName)
-	match currentNodeName:
-		\"Request\":
-			get_parent().get_parent().get_node(\"Details\").toggle_menu(1)
-		\"Request2\":
-			get_parent().get_parent().get_node(\"Details\").toggle_menu(2)
-		\"Request3\":
-			get_parent().get_parent().get_node(\"Details\").toggle_menu(3)
-		\"Request4\":
-			get_parent().get_parent().get_node(\"Details\").toggle_menu(4)
-		\"Request5\":
-			get_parent().get_parent().get_node(\"Details\").toggle_menu(5)
-		\"Request6\":
-			get_parent().get_parent().get_node(\"Details\").toggle_menu(6)
-		\"Request7\":
-			get_parent().get_parent().get_node(\"Details\").toggle_menu(7)
-		\"Request8\":
-			get_parent().get_parent().get_node(\"Details\").toggle_menu(8)
-		\"Request9\":
-			get_parent().get_parent().get_node(\"Details\").toggle_menu(9)
-		\"Request10\":
-			get_parent().get_parent().get_node(\"Details\").toggle_menu(10)
+	#print(currentNodeName)
+	var req_num = currentNodeName.split(\"Request\")[1]
+	get_parent().get_parent().get_node(\"Details\").toggle_menu(req_num)
 	
 func _ready():
 	pass # Replace with function body.
@@ -114,35 +95,7 @@ position = Vector2(583, 358)
 scale = Vector2(4.375, 4.4375)
 texture = ExtResource("6_a0ci1")
 
-[node name="Request10" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 533.0
-offset_top = 176.0
-offset_right = 626.0
-offset_bottom = 290.0
-script = ExtResource("3_rxkl7")
-
-[node name="Sprite2D" type="Sprite2D" parent="Request10"]
-position = Vector2(46, 58)
-scale = Vector2(3.0625, 2.65217)
-texture = ExtResource("2_kmnsm")
-script = SubResource("GDScript_wd0nn")
-
-[node name="Label" type="Label" parent="Request10"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 7.0
-offset_right = 90.0
-offset_bottom = 30.0
-text = "Potion #10"
-
-[node name="Potion" type="Sprite2D" parent="Request10"]
-position = Vector2(48, 72)
-scale = Vector2(2.9375, 3.125)
-texture = ExtResource("6_a0ci1")
-
-[node name="Request" type="Control" parent="."]
+[node name="Request1" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 54.0
@@ -151,13 +104,13 @@ offset_right = 147.0
 offset_bottom = 151.0
 script = ExtResource("3_rxkl7")
 
-[node name="Sprite2D" type="Sprite2D" parent="Request"]
+[node name="Sprite2D" type="Sprite2D" parent="Request1"]
 position = Vector2(46, 58)
 scale = Vector2(3.0625, 2.65217)
 texture = ExtResource("2_kmnsm")
 script = SubResource("GDScript_wd0nn")
 
-[node name="Label" type="Label" parent="Request"]
+[node name="Label" type="Label" parent="Request1"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 7.0
@@ -165,7 +118,7 @@ offset_right = 90.0
 offset_bottom = 30.0
 text = "Potion #1"
 
-[node name="Potion" type="Sprite2D" parent="Request"]
+[node name="Potion" type="Sprite2D" parent="Request1"]
 position = Vector2(48, 72)
 scale = Vector2(2.9375, 3.125)
 texture = ExtResource("6_a0ci1")
@@ -390,6 +343,34 @@ offset_bottom = 30.0
 text = "Potion #9"
 
 [node name="Potion" type="Sprite2D" parent="Request9"]
+position = Vector2(48, 72)
+scale = Vector2(2.9375, 3.125)
+texture = ExtResource("6_a0ci1")
+
+[node name="Request10" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 533.0
+offset_top = 176.0
+offset_right = 626.0
+offset_bottom = 290.0
+script = ExtResource("3_rxkl7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Request10"]
+position = Vector2(46, 58)
+scale = Vector2(3.0625, 2.65217)
+texture = ExtResource("2_kmnsm")
+script = SubResource("GDScript_wd0nn")
+
+[node name="Label" type="Label" parent="Request10"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 90.0
+offset_bottom = 30.0
+text = "Potion #10"
+
+[node name="Potion" type="Sprite2D" parent="Request10"]
 position = Vector2(48, 72)
 scale = Vector2(2.9375, 3.125)
 texture = ExtResource("6_a0ci1")
