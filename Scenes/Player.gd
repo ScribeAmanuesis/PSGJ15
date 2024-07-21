@@ -25,3 +25,7 @@ func collect(item):
 func _on_placeholder_inventory_increment_mouse_entered():
 	for i in range(10):
 		collect(ingredients_legend.pick_random())
+
+func brew_potion(potion):
+	for ingredient in potion.ingredients:
+		inv.consume(ingredient)

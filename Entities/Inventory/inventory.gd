@@ -18,3 +18,8 @@ func insert(item: InvItem):
 			emptyslots[0].item = item
 			emptyslots[0].quantity = 1
 	update.emit()
+
+func consume(item: InvItem):
+	var itemslots = slots.filter(func(slot): return slot.item == item)
+	if !itemslots.is_empty():
+			itemslots[0].quantity -= 1

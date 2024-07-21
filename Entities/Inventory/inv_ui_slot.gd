@@ -14,3 +14,4 @@ func update(slot: InvSlot):
 		item_name.text = slot.item.name
 		quantity_text.visible = true
 		quantity_text.text = str(slot.quantity)
+

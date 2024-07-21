@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://ctr2c8pn73rmf"]
+
+[ext_resource type="Resource" uid="uid://b8c6syobn6l6q" path="res://Entities/Inventory/Items/cinnabar.tres" id="1_7huqx"]
+[ext_resource type="Resource" uid="uid://6i55opisnq2n" path="res://Entities/Inventory/Items/mercury.tres" id="2_0puw2"]
+[ext_resource type="Resource" uid="uid://o2o4onti7hjb" path="res://Entities/Inventory/Items/sulfur.tres" id="3_4hfl3"]
+[ext_resource type="Script" path="res://potion.gd" id="4_3woyw"]
+[ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="5_r7obn"]
+
+[resource]
+script = ExtResource("4_3woyw")
+ingredients = Array[Resource("res://Entities/Inventory/inventory_item.gd")]([ExtResource("1_7huqx"), ExtResource("2_0puw2"), ExtResource("3_4hfl3")])
+name = "Health Potion"
+texture = ExtResource("5_r7obn")
