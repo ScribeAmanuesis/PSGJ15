@@ -48,6 +48,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Craft" type="Button" parent="."]
+visible = false
 offset_left = -106.0
 offset_top = -208.0
 offset_right = -34.0
@@ -55,10 +56,12 @@ offset_bottom = -177.0
 text = "Craft"
 
 [node name="Cancel" type="Button" parent="."]
+visible = false
 offset_left = 29.0
 offset_top = -209.0
 offset_right = 101.0
 offset_bottom = -178.0
 text = "Cancel"
 
+[connection signal="pressed" from="Craft" to="." method="_on_craft_pressed"]
 [connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
