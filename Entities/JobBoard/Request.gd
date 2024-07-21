@@ -3,12 +3,14 @@ extends Control
 var personName: String
 var potion: String
 var flavorText: String
+var shadow: Texture2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#pas
 	personName = get_parent().peopleName.pick_random()
 	potion = get_parent().potions.pick_random()
 	flavorText = get_parent().flavorTexts[get_parent().peopleName.find(personName)]
+	shadow = get_parent().shadows.pick_random()
 	#print(personName)
 	#print(potion)
 	#pass # Replace with function body.

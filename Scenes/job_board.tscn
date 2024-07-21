@@ -60,7 +60,7 @@ offset_right = 633.0
 offset_bottom = 156.0
 text = "John the Cat"
 
-[node name="Person" type="Sprite2D" parent="Details"]
+[node name="Shadow" type="Sprite2D" parent="Details"]
 position = Vector2(503, 225)
 scale = Vector2(2.84375, 2.71875)
 texture = ExtResource("5_l3oqm")

@@ -53,6 +53,17 @@ var potions = [
 	"Rage Potion",
 ]
 
+var bother: Texture2D = preload("res://Assets/EnemyBother.png")
+var fret: Texture2D = preload("res://Assets/EnemyFret.png")
+var woe: Texture2D = preload("res://Assets/EnemyWoe.png")
+var worry: Texture2D = preload("res://Assets/EnemyWorry.png")
+var shadows = [
+	bother,
+	fret,
+	woe,
+	worry
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#print(peopleName)
