@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmrl2gynex4vv"]
+
+[ext_resource type="PackedScene" uid="uid://cing77uuftcak" path="res://Scenes/draganddroptest.tscn" id="1_0flul"]
+[ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="2_yhqdo"]
+
+[node name="Test" type="Node2D"]
+
+[node name="TextureRect" parent="." instance=ExtResource("1_0flul")]
+offset_left = 35.0
+offset_top = 36.0
+offset_right = 73.0
+offset_bottom = 76.0
+texture = ExtResource("2_yhqdo")
+
+[node name="TextureRect2" parent="." instance=ExtResource("1_0flul")]
+offset_left = 117.0
+offset_top = 24.0
+offset_right = 157.0
+offset_bottom = 64.0

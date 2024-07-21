@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
+@onready var item_visual: TextureRect = $CenterContainer/Panel/item_display
 @onready var item_name: Label = $CenterContainer/Panel/item_name
 @onready var quantity_text: Label = $CenterContainer/Panel/item_quantity
 
@@ -14,4 +14,13 @@ func update(slot: InvSlot):
 		item_name.text = slot.item.name
 		quantity_text.visible = true
 		quantity_text.text = str(slot.quantity)
+
+
+#triggers when click and dragged
+func _get_drag_data(at_position):
+	return item_visual #returning dragged texture
+	
+#trigger when hover with dragged item
+func _can_drop_data(_pos, data):
+	pass
 

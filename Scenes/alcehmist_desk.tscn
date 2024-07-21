@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0oibgnor3jo6"]
+[gd_scene load_steps=14 format=3 uid="uid://b0oibgnor3jo6"]
 
 [ext_resource type="Texture2D" uid="uid://lt8bsio0w4jp" path="res://Assets/Potion_TD_Example.png" id="1_au5v1"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_qvj3d"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scenes/DropSpot.gd" id="6_ywnau"]
 [ext_resource type="PackedScene" uid="uid://natsowxm50vm" path="res://Scenes/job_board.tscn" id="11_62kji"]
 [ext_resource type="Texture2D" uid="uid://dc0uqeqysy56e" path="res://Assets/Ingredient.png" id="11_jyxkt"]
+[ext_resource type="PackedScene" uid="uid://ci4a767mt5ixe" path="res://Scenes/cauldron.tscn" id="13_rgf4r"]
 
 [node name="AlcehmistDesk" type="Node2D"]
 
@@ -97,6 +98,7 @@ offset_right = 1152.0
 offset_bottom = 320.0
 
 [node name="Cauldron" type="TextureRect" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 40.0
 offset_top = 368.0
@@ -148,5 +150,8 @@ texture = ExtResource("11_jyxkt")
 [node name="JobBoard" parent="." instance=ExtResource("11_62kji")]
 position = Vector2(-21, -5)
 metadata/_edit_lock_ = true
+
+[node name="Cauldron" parent="." instance=ExtResource("13_rgf4r")]
+position = Vector2(207, 476)
 
 [connection signal="mouse_entered" from="Control/Placeholder_Inventory_Increment" to="Player" method="_on_placeholder_inventory_increment_mouse_entered"]

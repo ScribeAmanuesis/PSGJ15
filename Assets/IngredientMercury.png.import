@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkedmv3rdakif"
-path="res://.godot/imported/IngredientMercury_1.png-ae87191b21cff84a74991e052d951fa5.ctex"
+path="res://.godot/imported/IngredientMercury.png-1d2542884173adad637e796e69da5ea1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/IngredientMercury_1.png"
-dest_files=["res://.godot/imported/IngredientMercury_1.png-ae87191b21cff84a74991e052d951fa5.ctex"]
+source_file="res://Assets/IngredientMercury.png"
+dest_files=["res://.godot/imported/IngredientMercury.png-1d2542884173adad637e796e69da5ea1.ctex"]
 
 [params]
 
