@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0oibgnor3jo6"]
+[gd_scene load_steps=12 format=3 uid="uid://b0oibgnor3jo6"]
 
 [ext_resource type="Texture2D" uid="uid://lt8bsio0w4jp" path="res://Assets/Potion_TD_Example.png" id="1_au5v1"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_qvj3d"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
 [ext_resource type="PackedScene" uid="uid://buk4e7js2ggj8" path="res://Entities/Inventory/inv_ui.tscn" id="6_xhi5g"]
 [ext_resource type="Script" path="res://Scenes/DropSpot.gd" id="6_ywnau"]
+[ext_resource type="Texture2D" uid="uid://dc0uqeqysy56e" path="res://Assets/Ingredient.png" id="11_3fd8m"]
 
 [node name="AlcehmistDesk" type="Node2D"]
 
@@ -53,21 +54,6 @@ grow_vertical = 2
 theme_override_constants/separation = 42
 
 [node name="MarginContainer" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
-layout_mode = 2
-
-[node name="MarginContainer2" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
-layout_mode = 2
-
-[node name="MarginContainer3" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
-layout_mode = 2
-
-[node name="MarginContainer4" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
-layout_mode = 2
-
-[node name="MarginContainer5" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
-layout_mode = 2
-
-[node name="MarginContainer6" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
 layout_mode = 2
 
 [node name="PotionShelf_UI" type="Control" parent="Control"]
@@ -147,3 +133,13 @@ offset_right = 632.0
 offset_bottom = 584.0
 texture_normal = ExtResource("6_5gb5f")
 stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 128.0
+offset_right = 544.0
+offset_bottom = 256.0
+texture = ExtResource("11_3fd8m")
+
+[connection signal="mouse_entered" from="Control/TextureRect" to="Player" method="_on_texture_rect_mouse_entered"]

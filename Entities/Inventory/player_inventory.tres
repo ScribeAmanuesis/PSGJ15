@@ -1,9 +1,28 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=4 format=3 uid="uid://bpalhxs73346f"]
+[gd_resource type="Resource" script_class="Inv" load_steps=8 format=3 uid="uid://bpalhxs73346f"]
 
 [ext_resource type="Script" path="res://Entities/Inventory/inventory.gd" id="1_0f0fv"]
-[ext_resource type="Resource" uid="uid://cmoqdnwaekqpu" path="res://Entities/Inventory/Items/redberry.tres" id="1_x2mnu"]
-[ext_resource type="Resource" uid="uid://bioiyf5sdk3vy" path="res://Entities/Inventory/Items/vial_of_blood.tres" id="2_3ilu1"]
+[ext_resource type="Script" path="res://Entities/Inventory/inv_slot.gd" id="2_455xa"]
+
+[sub_resource type="Resource" id="Resource_85sxn"]
+script = ExtResource("2_455xa")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_babm2"]
+script = ExtResource("2_455xa")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_4xgyo"]
+script = ExtResource("2_455xa")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_35c3p"]
+script = ExtResource("2_455xa")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_d38ry"]
+script = ExtResource("2_455xa")
+amount = 0
 
 [resource]
 script = ExtResource("1_0f0fv")
-items = Array[Resource("res://Entities/Inventory/inventory_item.gd")]([ExtResource("1_x2mnu"), ExtResource("2_3ilu1"), null, null, null])
+slots = Array[ExtResource("2_455xa")]([SubResource("Resource_85sxn"), SubResource("Resource_babm2"), SubResource("Resource_4xgyo"), SubResource("Resource_35c3p"), SubResource("Resource_d38ry")])

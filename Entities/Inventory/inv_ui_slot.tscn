@@ -33,6 +33,7 @@ offset_right = 48.0
 offset_bottom = -16.0
 
 [node name="item_quantity" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
