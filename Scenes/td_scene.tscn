@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cb3mop4wy18pg" path="res://Assets/AlchemyShadowPack_AutoTile.png" id="1_5l7cl"]
 [ext_resource type="Texture2D" uid="uid://dw2bcx53cqr67" path="res://Assets/AlchemyShadowPack_Basic.png" id="1_ac2rv"]
 [ext_resource type="Script" path="res://character_controller.gd" id="1_fgn75"]
-[ext_resource type="PackedScene" uid="uid://cap3eukwwq6js" path="res://Entities/Towers/Salamander.tscn" id="4_r8e3r"]
+[ext_resource type="PackedScene" path="res://Entities/Towers/Salamander.tscn" id="4_r8e3r"]
 [ext_resource type="PackedScene" uid="uid://dwl8tsgpesjlp" path="res://Entities/Enemies/bother.tscn" id="5_lbx4t"]
 [ext_resource type="PackedScene" uid="uid://bnivg5ejn1i6y" path="res://Entities/Enemies/worry.tscn" id="5_myiam"]
 [ext_resource type="PackedScene" uid="uid://d0ua05mj1dtkx" path="res://Entities/Enemies/fret.tscn" id="6_6vpap"]
