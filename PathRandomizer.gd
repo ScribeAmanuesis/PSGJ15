@@ -27,7 +27,6 @@ func _generate_path():
 	#Pick the starting cell and add it to the stack
 	var starting_cell : = tilemap.local_to_map(tilemap.to_local(start.global_position))
 	cell_stack.append(starting_cell)
-	path.curve.add_point(starting_cell * tilemap.tile_set.tile_size)
 	tilemap.set_cells_terrain_connect(0, [starting_cell],0, 0)
 	
 	
