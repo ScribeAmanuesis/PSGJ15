@@ -8,10 +8,14 @@ extends Control
 var is_open = true
 
 func _ready():
+	#when update is emitted calls update_slots/update_potoin_slots
 	inv.update.connect(update_slots)
+	#potion_inv.update.connect(update_potion_slots)
+	
 	update_slots()
 	update_potion_slots()
 	open()
+	print("readying complete")
 
 func _process(delta):
 	if Input.is_action_just_pressed("toggle_inventory"):
@@ -21,6 +25,7 @@ func _process(delta):
 			open()
 
 func update_slots():
+	print("updating potion slots...")
 	for i in range(min(inv.slots.size(), slots.size())):
 		slots[i].update(inv.slots[i])
 	
@@ -28,6 +33,7 @@ func update_slots():
 		#potion_slots[i].update(potion_inv.slots[i])
 
 func update_potion_slots():
+	print("updating potion slots...")
 	for i in range(min(potion_inv.slots.size(), potion_slots.size())):
 		potion_slots[i].update(potion_inv.slots[i])
 

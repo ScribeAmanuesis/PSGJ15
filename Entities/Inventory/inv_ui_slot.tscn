@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmw2gd2hw40cn"]
 
 [ext_resource type="Script" path="res://Entities/Inventory/inv_ui_slot.gd" id="1_xj8io"]
-[ext_resource type="PackedScene" uid="uid://cing77uuftcak" path="res://Scenes/draganddroptest.tscn" id="2_suld6"]
+[ext_resource type="Script" path="res://TextureRect.gd" id="2_aikgr"]
 
 [node name="inv_UI_slot" type="Panel"]
 custom_minimum_size = Vector2(96, 96)
@@ -24,17 +24,15 @@ offset_bottom = 96.0
 [node name="Panel" type="Panel" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="item_display" parent="CenterContainer/Panel" instance=ExtResource("2_suld6")]
+[node name="item_display" type="TextureRect" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -33.0
+offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0
 offset_bottom = 32.0
-grow_horizontal = 1
-grow_vertical = 1
+expand_mode = 1
+script = ExtResource("2_aikgr")
 
 [node name="item_name" type="Label" parent="CenterContainer/Panel"]
 layout_mode = 0
