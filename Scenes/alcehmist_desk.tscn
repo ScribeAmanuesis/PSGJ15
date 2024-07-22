@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://lt8bsio0w4jp" path="res://Assets/Potion_TD_Example.png" id="1_au5v1"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_qvj3d"]
-[ext_resource type="Resource" uid="uid://bxu1cty2eoqos" path="res://Entities/Inventory/player_inventorybak.tres" id="2_4pbne"]
 [ext_resource type="PackedScene" uid="uid://c2lehdawbgjeu" path="res://potion_order_card.tscn" id="2_ayjxo"]
+[ext_resource type="Resource" uid="uid://bpalhxs73346f" path="res://Entities/Inventory/player_ingredient_inventory.tres" id="2_ju3m3"]
 [ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="3_nldau"]
 [ext_resource type="Texture2D" uid="uid://dwqe7ek0pf5pf" path="res://Assets/Cauldron.png" id="4_6kefy"]
 [ext_resource type="Texture2D" uid="uid://jpabusjgnah8" path="res://Assets/SummonCircle.png" id="5_ijyl4"]
@@ -18,7 +18,7 @@
 
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_qvj3d")
-inv = ExtResource("2_4pbne")
+inv = ExtResource("2_ju3m3")
 
 [node name="PotionTdExample" type="Sprite2D" parent="."]
 visible = false
