@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://86gn0kqf2286"]
+[gd_scene load_steps=10 format=3 uid="uid://ch3ahwxp71dfk"]
 
 [ext_resource type="PackedScene" uid="uid://b4qnvgdco6wq3" path="res://Entities/Towers/tower_base.tscn" id="1_xfinh"]
 [ext_resource type="Script" path="res://Effects/SlowTarget.gd" id="2_ksuwa"]

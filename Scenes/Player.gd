@@ -20,7 +20,7 @@ func _ready():
 	pass
 
 func collect(item):
-	print("calling collect")
+	print_debug("calling collect")
 	inv.insert(item)
 
 func _on_placeholder_inventory_increment_mouse_entered():

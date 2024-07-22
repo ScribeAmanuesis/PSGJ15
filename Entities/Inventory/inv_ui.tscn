@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://buk4e7js2ggj8"]
+[gd_scene load_steps=4 format=3 uid="uid://buk4e7js2ggj8"]
 
 [ext_resource type="Script" path="res://Entities/Inventory/inv_ui.gd" id="1_mrlc1"]
 [ext_resource type="PackedScene" uid="uid://cmw2gd2hw40cn" path="res://Entities/Inventory/inv_ui_slot.tscn" id="2_12djd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_if6gl"]
+bg_color = Color(1, 0.709804, 0.588235, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.25098, 0.129412, 0.0784314, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Inv_UI" type="Control"]
 custom_minimum_size = Vector2(40, 40)
@@ -12,19 +25,16 @@ offset_bottom = 40.0
 script = ExtResource("1_mrlc1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 512.0
 offset_bottom = 288.0
-color = Color(1, 0.709768, 0.589415, 1)
+color = Color(1, 0.709804, 0.588235, 1)
 
 [node name="GridContainer" type="GridContainer" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -256.0
-offset_right = 256.0
-offset_bottom = 128.0
+layout_mode = 2
+offset_right = 512.0
+offset_bottom = 288.0
 grow_horizontal = 2
 columns = 5
 
@@ -44,15 +54,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="GridContainer2" type="GridContainer" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -256.0
-offset_top = -128.0
-offset_right = 256.0
+layout_mode = 2
+offset_top = 112.0
+offset_right = 512.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 0
 columns = 5
@@ -70,4 +75,74 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="inv_UI_slot5" parent="ColorRect/GridContainer2" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 528.0
+offset_bottom = 304.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_if6gl")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Ingredients" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="inv_UI_slot" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot2" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot3" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot4" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="Potions" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="inv_UI_slot" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot2" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot3" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot4" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="Towers" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="inv_UI_slot" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot2" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot3" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot4" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
+layout_mode = 2
+
+[node name="inv_UI_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
 layout_mode = 2
