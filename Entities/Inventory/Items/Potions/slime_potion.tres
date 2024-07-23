@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=3 format=3 uid="uid://bcx1qn8yvgabj"]
+
+[ext_resource type="Script" path="res://potion.gd" id="1_eegwu"]
+[ext_resource type="Texture2D" uid="uid://bxej5g6ownd1d" path="res://Assets/SlimePotion.png" id="2_421xf"]
+
+[resource]
+script = ExtResource("1_eegwu")
+ingredients = {
+"Cinnabar": 1,
+"Mercury": 1,
+"Salt": 1,
+"Soul": 0,
+"Sulfur": 0
+}
+name = "Slime Potion"
+texture = ExtResource("2_421xf")

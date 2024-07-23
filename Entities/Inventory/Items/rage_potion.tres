@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://gkfoy34hsuca"]
-
-[ext_resource type="Script" path="res://Entities/Inventory/inventory_item.gd" id="1_bb65c"]
-[ext_resource type="Texture2D" uid="uid://r12klmu8g2qy" path="res://Assets/RagePotion.png" id="2_t8r1f"]
-
-[resource]
-script = ExtResource("1_bb65c")
-name = "rage_potion"
-texture = ExtResource("2_t8r1f")

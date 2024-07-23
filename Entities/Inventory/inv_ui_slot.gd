@@ -5,7 +5,6 @@ extends Panel
 @onready var quantity_text: Label = $CenterContainer/Panel/item_quantity
 
 func update(slot: InvSlot):
-	print("visual ui updating")
 	if !slot.item:
 		item_visual.visible = false
 	else:

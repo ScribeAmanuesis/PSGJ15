@@ -9,7 +9,6 @@ signal update
 @export var slots: Array[InvSlot]
 
 func insert(item: InvItem):
-	print("calling insert of an item")
 	var itemslots = slots.filter(func(slot): return slot.item == item)
 	if !itemslots.is_empty():
 		#print("slots not empty")
@@ -22,7 +21,11 @@ func insert(item: InvItem):
 			emptyslots[0].quantity = 1
 	update.emit()
 
-func consume(item: InvItem):
+func consume(item: InvItem, amount: int):
 	var itemslots = slots.filter(func(slot): return slot.item == item)
 	if !itemslots.is_empty():
-			itemslots[0].quantity -= 1
+		if(itemslots[0].quantity >= amount):
+			itemslots[0].quantity -= amount
+		else:
+			print("Not enough materials")
+	update.emit()

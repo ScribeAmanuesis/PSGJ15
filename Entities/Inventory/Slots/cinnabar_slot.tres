@@ -6,5 +6,4 @@
 [resource]
 script = ExtResource("2_r4amg")
 item = ExtResource("1_ntb6w")
-amount = 0
 quantity = 0

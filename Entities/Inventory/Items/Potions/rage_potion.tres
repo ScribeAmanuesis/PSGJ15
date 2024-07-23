@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=3 format=3 uid="uid://gkfoy34hsuca"]
+
+[ext_resource type="Script" path="res://potion.gd" id="1_dv6y0"]
+[ext_resource type="Texture2D" uid="uid://r12klmu8g2qy" path="res://Assets/RagePotion.png" id="2_t8r1f"]
+
+[resource]
+script = ExtResource("1_dv6y0")
+ingredients = {
+"Cinnabar": 2,
+"Mercury": 1,
+"Salt": 0,
+"Soul": 0,
+"Sulfur": 0
+}
+name = "rage_potion"
+texture = ExtResource("2_t8r1f")
