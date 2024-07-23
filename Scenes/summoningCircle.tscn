@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://db2a6ff271bfa"]
+[gd_scene load_steps=9 format=3 uid="uid://db2a6ff271bfa"]
 
 [ext_resource type="Script" path="res://Scenes/summoningCircle.gd" id="1_whoxd"]
 [ext_resource type="Texture2D" uid="uid://jpabusjgnah8" path="res://Assets/SummonCircle.png" id="2_enseu"]
+[ext_resource type="Resource" uid="uid://chx5wtajyckna" path="res://Scenes/Inventory/player_tower_inventory.tres" id="2_qpxx1"]
 [ext_resource type="Script" path="res://Scenes/Inventory/Items/Ingredients/IngredientDisplayPanel.gd" id="3_cl85u"]
 [ext_resource type="PackedScene" uid="uid://d2l1famc67ewk" path="res://Scenes/crafting_notification.tscn" id="4_gllqy"]
 
@@ -60,6 +61,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_whoxd")
+inventory = ExtResource("2_qpxx1")
 
 [node name="Sprite2D" type="TextureRect" parent="."]
 layout_mode = 1

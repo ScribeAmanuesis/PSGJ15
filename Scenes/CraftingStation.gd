@@ -1,7 +1,7 @@
 extends Control
-
 class_name CraftingStation
 
+@export var inventory : Inv = Player.potion_inv
 #The cauldron slots
 @onready var ingredient1#: = $Sprite2D/VBoxContainer/HBoxContainer3/IngredientDisplayPanel
 @onready var ingredient2#: = $Sprite2D/VBoxContainer/HBoxContainer3/IngredientDisplayPanel2
@@ -26,6 +26,7 @@ const SULFUR = preload("res://Scenes/Inventory/Items/Ingredients/sulfur.tres")
 @export var ingredients_legend: Array[InvItem] = [CINNABAR,MERCURY,SALT,SOUL,SULFUR]
 
 var recipes : = {}
+
 
 #RecipeNames
 #var recipeNames: Array = ["Rage Potion", "Slime Potion", "Health Potion"]
@@ -75,7 +76,7 @@ func any_ingredient_slots_filled() -> bool:
 			return true
 	return false
 
-func _on_cancel_pressed():
+func _on_cancel_pronessed():
 	for ingredient in ingredientUsed:
 		Player.ingredient_inv.insert(ingredient.item)
 		ingredient.set_item(null)
@@ -94,7 +95,7 @@ func _on_craft_pressed():
 			valid = true
 			print_debug("Valid ingredient combination for: '{result}'".format({'result':recipes[recipe].name}))
 			# TODO Find a way to determine whether to insert into potion inventory or tower inventory
-			Player.potion_inv.insert(recipes[recipe])
+			inventory.insert(recipes[recipe])
 			update_and_pop_crafting_notification(recipes[recipe])
 			# TODO - subtract from inventory
 	if not valid:
