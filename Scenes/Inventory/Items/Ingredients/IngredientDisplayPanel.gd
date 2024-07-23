@@ -20,12 +20,11 @@ func _get_drag_data(at_position):
 	preview_texture.expand_mode = 1
 	preview_texture.size = Vector2(32,32)
 	
-	#var preview = Control.new()
-	#preview.add_child(preview_texture)
-	
 	set_drag_preview(preview_texture)
 	print_debug("dragged?")
-	return item
+	var data = item
+	item = null
+	return data
 
 func _can_drop_data(_pos, data):
 	return data is InvItem 
@@ -33,15 +32,10 @@ func _can_drop_data(_pos, data):
 func _drop_data(_pos, data):
 	print_debug("dropped?")
 	texture_rect.texture = data.texture
-	#item = data
 	set_item(data)
 	if data:
-		#has_item = true
 		item_added.emit()
-	#else:
-		#has_item = false
-		#clear_texture()
-		
+	
 #endregion
 
 func clear_texture():
