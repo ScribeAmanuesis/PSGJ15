@@ -1,7 +1,7 @@
 extends Panel
 
 @onready var texture_rect = $Center/TextureRect
-var has_item : = false
+#var has_item : = false
 
 var item : InvItem : 
 	set = set_item
@@ -33,13 +33,14 @@ func _can_drop_data(_pos, data):
 func _drop_data(_pos, data):
 	print_debug("dropped?")
 	texture_rect.texture = data.texture
-	item = data
+	#item = data
+	set_item(data)
 	if data:
-		has_item = true
+		#has_item = true
 		item_added.emit()
-	else:
-		has_item = false
-		clear_texture()
+	#else:
+		#has_item = false
+		#clear_texture()
 		
 #endregion
 

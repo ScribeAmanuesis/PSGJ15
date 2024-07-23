@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0oibgnor3jo6"]
+[gd_scene load_steps=11 format=3 uid="uid://b0oibgnor3jo6"]
 
 [ext_resource type="Script" path="res://PotionSFX.gd" id="1_7cfqn"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_qvj3d"]
+[ext_resource type="PackedScene" uid="uid://db2a6ff271bfa" path="res://Scenes/summoningCircle.tscn" id="4_ysglm"]
 [ext_resource type="Texture2D" uid="uid://jpabusjgnah8" path="res://Assets/SummonCircle.png" id="5_ijyl4"]
 [ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
 [ext_resource type="PackedScene" uid="uid://buk4e7js2ggj8" path="res://Scenes/Inventory/inv_ui.tscn" id="6_xhi5g"]
@@ -26,20 +27,8 @@ script = ExtResource("1_7cfqn")
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("1_qvj3d")
 
-[node name="ItemInventory" parent="." instance=ExtResource("6_xhi5g")]
-offset_left = 584.0
-offset_top = 16.0
-offset_right = 1096.0
-offset_bottom = 304.0
-
-[node name="Cauldron" parent="." instance=ExtResource("13_rgf4r")]
-layout_mode = 1
-offset_left = -1088.0
-offset_top = -336.0
-offset_right = -768.0
-offset_bottom = -16.0
-
-[node name="SummoningCircle" type="TextureRect" parent="."]
+[node name="SummoningCircleOld" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 672.0
 offset_top = 352.0
@@ -47,7 +36,7 @@ offset_right = 1136.0
 offset_bottom = 616.0
 texture = ExtResource("5_ijyl4")
 
-[node name="DropList" type="HBoxContainer" parent="SummoningCircle"]
+[node name="DropList" type="HBoxContainer" parent="SummoningCircleOld"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 112.0
@@ -66,11 +55,31 @@ stretch_mode = 0
 
 [node name="Placeholder_Inventory_Increment" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 640.0
-offset_top = 352.0
-offset_right = 736.0
-offset_bottom = 448.0
+offset_left = 480.0
+offset_top = 320.0
+offset_right = 576.0
+offset_bottom = 416.0
 texture = ExtResource("11_jyxkt")
+
+[node name="ItemInventory" parent="." instance=ExtResource("6_xhi5g")]
+offset_left = 584.0
+offset_top = 16.0
+offset_right = 1096.0
+offset_bottom = 304.0
+
+[node name="Cauldron" parent="." instance=ExtResource("13_rgf4r")]
+layout_mode = 1
+offset_left = -1088.0
+offset_top = -336.0
+offset_right = -768.0
+offset_bottom = -16.0
+
+[node name="SummoningCircle" parent="." instance=ExtResource("4_ysglm")]
+layout_mode = 1
+offset_left = -480.0
+offset_top = -328.0
+offset_right = -160.0
+offset_bottom = -8.0
 
 [node name="JobBoard" parent="." instance=ExtResource("11_62kji")]
 position = Vector2(-80, -8)

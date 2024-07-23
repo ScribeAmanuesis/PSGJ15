@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci4a767mt5ixe"]
+[gd_scene load_steps=8 format=3 uid="uid://db2a6ff271bfa"]
 
-[ext_resource type="Texture2D" uid="uid://dwqe7ek0pf5pf" path="res://Assets/Cauldron.png" id="1_7nn3a"]
-[ext_resource type="Script" path="res://Scenes/cauldron.gd" id="1_phngj"]
-[ext_resource type="Script" path="res://Scenes/Inventory/Items/Ingredients/IngredientDisplayPanel.gd" id="3_yfcbs"]
-[ext_resource type="PackedScene" uid="uid://d2l1famc67ewk" path="res://Scenes/crafting_notification.tscn" id="4_6fja6"]
+[ext_resource type="Script" path="res://Scenes/summoningCircle.gd" id="1_whoxd"]
+[ext_resource type="Texture2D" uid="uid://jpabusjgnah8" path="res://Assets/SummonCircle.png" id="2_enseu"]
+[ext_resource type="Script" path="res://Scenes/Inventory/Items/Ingredients/IngredientDisplayPanel.gd" id="3_cl85u"]
+[ext_resource type="PackedScene" uid="uid://d2l1famc67ewk" path="res://Scenes/crafting_notification.tscn" id="4_gllqy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hbtw"]
 bg_color = Color(0.141176, 0.141176, 0.141176, 1)
@@ -44,7 +44,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Cauldron" type="Control"]
+[node name="SummoningCircle" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -59,7 +59,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_phngj")
+script = ExtResource("1_whoxd")
 ingredients_legend = null
 
 [node name="Sprite2D" type="TextureRect" parent="."]
@@ -69,7 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7nn3a")
+texture = ExtResource("2_enseu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D"]
 layout_mode = 1
@@ -104,7 +104,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_6hbtw")
-script = ExtResource("3_yfcbs")
+script = ExtResource("3_cl85u")
 
 [node name="Center" type="CenterContainer" parent="Sprite2D/VBoxContainer/HBoxContainer3/IngredientDisplayPanel"]
 layout_mode = 1
@@ -121,7 +121,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_3xvd6")
-script = ExtResource("3_yfcbs")
+script = ExtResource("3_cl85u")
 
 [node name="Center" type="CenterContainer" parent="Sprite2D/VBoxContainer/HBoxContainer3/IngredientDisplayPanel2"]
 layout_mode = 1
@@ -138,7 +138,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_k7n2t")
-script = ExtResource("3_yfcbs")
+script = ExtResource("3_cl85u")
 
 [node name="Center" type="CenterContainer" parent="Sprite2D/VBoxContainer/HBoxContainer3/IngredientDisplayPanel3"]
 layout_mode = 1
@@ -169,7 +169,7 @@ offset_right = 255.0
 offset_bottom = 75.0
 text = "Cancel"
 
-[node name="Notification" parent="." instance=ExtResource("4_6fja6")]
+[node name="Notification" parent="." instance=ExtResource("4_gllqy")]
 layout_mode = 1
 offset_left = 1.0
 offset_top = -289.0
