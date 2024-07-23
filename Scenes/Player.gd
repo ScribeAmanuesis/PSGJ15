@@ -1,38 +1,34 @@
-extends CharacterBody2D
-
+extends Node2D
 class_name Player
 
-@export var inv: Inv
-#@onready var slots: Array = $Entities.Inventory.Items.get_children()
-#@export var ingredients : Array[Resource]
-var cinnabar: InvItem = preload("res://Entities/Inventory/Items/cinnabar.tres")
-var mercury: InvItem = preload("res://Entities/Inventory/Items/mercury.tres")
-#var redberry: InvItem = preload("res://Entities/Inventory/Items/redberry.tres")
-var salt: InvItem = preload("res://Entities/Inventory/Items/salt.tres")
-var soul: InvItem = preload("res://Entities/Inventory/Items/soul.tres")
-var sulfur: InvItem = preload("res://Entities/Inventory/Items/sulfur.tres")
-#var vial_of_blood: InvItem = preload("res://Entities/Inventory/Items/vial_of_blood.tres")
-@export var ingredients_legend: Array[InvItem] = [cinnabar,mercury,salt,soul,sulfur]
+@export var ingredients_legend: Array[InvItem] = [CINNABAR,MERCURY,SALT,SOUL,SULFUR]
 
-var ingredientNameToItem: Dictionary = {"Cinnabar": cinnabar, "Mercury": mercury, "Salt": salt, "Soul": soul, "Sulfur": sulfur }
+var potion_inv : Inv = preload("res://Scenes/Inventory/player_potion_inventory.tres")
+var ingredient_inv : Inv = preload("res://Scenes/Inventory/player_ingredient_inventory.tres")
+var tower_inv : Inv
 
-func _ready():
-	#for i in ingredients_legend:
-	#for i in range(10):
-		#collect(ingredients_legend.pick_random())
-	#collect(cinnabar)
-	pass
+const CINNABAR = preload("res://Scenes/Inventory/Items/Ingredients/cinnabar.tres")
+const MERCURY = preload("res://Scenes/Inventory/Items/Ingredients/mercury.tres")
+const SALT = preload("res://Scenes/Inventory/Items/Ingredients/salt.tres")
+const SOUL = preload("res://Scenes/Inventory/Items/Ingredients/soul.tres")
+const SULFUR = preload("res://Scenes/Inventory/Items/Ingredients/sulfur.tres")
+
+
+var ingredientNameToItem: Dictionary = {
+	"Cinnabar": CINNABAR, 
+	"Mercury": MERCURY, 
+	"Salt": SALT, 
+	"Soul": SOUL, 
+	"Sulfur": SULFUR 
+}
 
 func collect(item):
-	inv.insert(item)
+	potion_inv.insert(item)
 
 func _on_placeholder_inventory_increment_mouse_entered():
 	for i in range(10):
 		collect(ingredients_legend.pick_random())
 
-
 func brew_potion(potion):
 	for ingredient in potion.ingredients:
-		#find a way to get amount
-		
-		inv.consume(ingredientNameToItem[ingredient], potion.ingredients[ingredient])
+		potion_inv.consume(ingredientNameToItem[ingredient], potion.ingredients[ingredient])

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=9 format=3 uid="uid://1pet22y7fm6r"]
+
+[ext_resource type="Script" path="res://Scenes/Inventory/inventory.gd" id="1_2equv"]
+[ext_resource type="Resource" uid="uid://ctr2c8pn73rmf" path="res://Scenes/Inventory/Items/Potions/health_potion.tres" id="2_bouit"]
+[ext_resource type="Script" path="res://Scenes/Inventory/inv_slot.gd" id="3_8igph"]
+[ext_resource type="Resource" uid="uid://gkfoy34hsuca" path="res://Scenes/Inventory/Items/Potions/rage_potion.tres" id="4_cm415"]
+[ext_resource type="Resource" uid="uid://bcx1qn8yvgabj" path="res://Scenes/Inventory/Items/Potions/slime_potion.tres" id="5_b0w0g"]
+
+[sub_resource type="Resource" id="Resource_m82ye"]
+script = ExtResource("3_8igph")
+item = ExtResource("2_bouit")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_mrlp8"]
+script = ExtResource("3_8igph")
+item = ExtResource("4_cm415")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_wbt7o"]
+script = ExtResource("3_8igph")
+item = ExtResource("5_b0w0g")
+quantity = 1
+
+[resource]
+script = ExtResource("1_2equv")
+slots = Array[ExtResource("3_8igph")]([SubResource("Resource_m82ye"), SubResource("Resource_mrlp8"), SubResource("Resource_wbt7o")])

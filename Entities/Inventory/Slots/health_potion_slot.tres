@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="InvSlot" load_steps=3 format=3 uid="uid://bj7ijcfndbsti"]
-
-[ext_resource type="Resource" uid="uid://ctr2c8pn73rmf" path="res://Entities/Inventory/Items/Potions/health_potion.tres" id="1_lfsbv"]
-[ext_resource type="Script" path="res://Entities/Inventory/inv_slot.gd" id="2_21pl4"]
-
-[resource]
-script = ExtResource("2_21pl4")
-item = ExtResource("1_lfsbv")
-quantity = 0

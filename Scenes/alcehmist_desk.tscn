@@ -1,35 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0oibgnor3jo6"]
+[gd_scene load_steps=10 format=3 uid="uid://b0oibgnor3jo6"]
 
 [ext_resource type="Script" path="res://PotionSFX.gd" id="1_7cfqn"]
-[ext_resource type="Texture2D" uid="uid://lt8bsio0w4jp" path="res://Assets/Potion_TD_Example.png" id="1_au5v1"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_qvj3d"]
-[ext_resource type="PackedScene" uid="uid://c2lehdawbgjeu" path="res://potion_order_card.tscn" id="2_ayjxo"]
-[ext_resource type="Resource" path="res://Entities/Inventory/player_ingredient_inventory.tres" id="2_ju3m3"]
-[ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="3_nldau"]
 [ext_resource type="Texture2D" uid="uid://jpabusjgnah8" path="res://Assets/SummonCircle.png" id="5_ijyl4"]
 [ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
-[ext_resource type="PackedScene" uid="uid://buk4e7js2ggj8" path="res://Entities/Inventory/inv_ui.tscn" id="6_xhi5g"]
+[ext_resource type="PackedScene" uid="uid://buk4e7js2ggj8" path="res://Scenes/Inventory/inv_ui.tscn" id="6_xhi5g"]
 [ext_resource type="Script" path="res://Scenes/DropSpot.gd" id="6_ywnau"]
-[ext_resource type="PackedScene" path="res://Scenes/job_board.tscn" id="11_62kji"]
+[ext_resource type="PackedScene" uid="uid://dlpoln4gra00o" path="res://Scenes/job_board.tscn" id="11_62kji"]
 [ext_resource type="Texture2D" uid="uid://dc0uqeqysy56e" path="res://Assets/Ingredient.png" id="11_jyxkt"]
 [ext_resource type="PackedScene" uid="uid://ci4a767mt5ixe" path="res://Scenes/cauldron.tscn" id="13_rgf4r"]
 
-[node name="AlcehmistDesk" type="Node2D"]
-
-[node name="SFX" type="AudioStreamPlayer2D" parent="."]
-script = ExtResource("1_7cfqn")
-
-[node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_qvj3d")
-inv = ExtResource("2_ju3m3")
-
-[node name="PotionTdExample" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(1.37306, 1.08908)
-texture = ExtResource("1_au5v1")
-centered = false
-
-[node name="Control" type="Control" parent="."]
+[node name="AlchemistDesk" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,68 +20,26 @@ offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PotionOrders" type="Control" parent="Control"]
-visible = false
-clip_contents = true
-anchors_preset = 0
-offset_left = 80.0
-offset_top = 40.0
-offset_right = 664.0
-offset_bottom = 384.0
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("1_7cfqn")
 
-[node name="PotionOrders" type="HBoxContainer" parent="Control/PotionOrders"]
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("1_qvj3d")
+
+[node name="ItemInventory" parent="." instance=ExtResource("6_xhi5g")]
+offset_left = 584.0
+offset_top = 16.0
+offset_right = 1096.0
+offset_bottom = 304.0
+
+[node name="Cauldron" parent="." instance=ExtResource("13_rgf4r")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1162.0
-offset_bottom = -9.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 42
+offset_left = -1088.0
+offset_top = -336.0
+offset_right = -768.0
+offset_bottom = -16.0
 
-[node name="MarginContainer" parent="Control/PotionOrders/PotionOrders" instance=ExtResource("2_ayjxo")]
-layout_mode = 2
-
-[node name="PotionShelf_UI" type="Control" parent="Control"]
-visible = false
-anchors_preset = 0
-offset_left = 696.0
-offset_top = 160.0
-offset_right = 1152.0
-offset_bottom = 312.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PotionShelf_UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer4" type="VBoxContainer" parent="Control/PotionShelf_UI/HBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureButton" parent="Control/PotionShelf_UI/HBoxContainer/VBoxContainer4"]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-texture_normal = ExtResource("3_nldau")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Control/PotionShelf_UI/HBoxContainer/VBoxContainer4"]
-layout_mode = 2
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Inv_UI" parent="Control" instance=ExtResource("6_xhi5g")]
-offset_left = 640.0
-offset_top = 32.0
-offset_right = 1152.0
-offset_bottom = 320.0
-
-[node name="SummoningCircle" type="TextureRect" parent="Control"]
+[node name="SummoningCircle" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 672.0
 offset_top = 352.0
@@ -108,7 +47,7 @@ offset_right = 1136.0
 offset_bottom = 616.0
 texture = ExtResource("5_ijyl4")
 
-[node name="DropList" type="HBoxContainer" parent="Control/SummoningCircle"]
+[node name="DropList" type="HBoxContainer" parent="SummoningCircle"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 112.0
@@ -116,7 +55,7 @@ offset_right = 440.0
 offset_bottom = 200.0
 script = ExtResource("6_ywnau")
 
-[node name="RecipeBook" type="TextureButton" parent="Control"]
+[node name="RecipeBook" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 440.0
 offset_top = 416.0
@@ -125,7 +64,7 @@ offset_bottom = 584.0
 texture_normal = ExtResource("6_5gb5f")
 stretch_mode = 0
 
-[node name="Placeholder_Inventory_Increment" type="TextureRect" parent="Control"]
+[node name="Placeholder_Inventory_Increment" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 640.0
 offset_top = 352.0
@@ -134,9 +73,6 @@ offset_bottom = 448.0
 texture = ExtResource("11_jyxkt")
 
 [node name="JobBoard" parent="." instance=ExtResource("11_62kji")]
-position = Vector2(-21, -5)
+position = Vector2(-80, -8)
 
-[node name="Cauldron" parent="." instance=ExtResource("13_rgf4r")]
-position = Vector2(207, 476)
-
-[connection signal="mouse_entered" from="Control/Placeholder_Inventory_Increment" to="Player" method="_on_placeholder_inventory_increment_mouse_entered"]
+[connection signal="mouse_entered" from="Placeholder_Inventory_Increment" to="Player" method="_on_placeholder_inventory_increment_mouse_entered"]

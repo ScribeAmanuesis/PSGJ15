@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvSlot" load_steps=3 format=3 uid="uid://c2bni4hemqmkw"]
+
+[ext_resource type="Resource" uid="uid://20wtkj0v0wvi" path="res://Scenes/Inventory/Items/Ingredients/salt.tres" id="1_t6koq"]
+[ext_resource type="Script" path="res://Scenes/Inventory/inv_slot.gd" id="2_1thvi"]
+
+[resource]
+script = ExtResource("2_1thvi")
+item = ExtResource("1_t6koq")
+quantity = 0

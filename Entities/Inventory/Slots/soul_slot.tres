@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="InvSlot" load_steps=3 format=3 uid="uid://bxnh3u5wv4bdo"]
-
-[ext_resource type="Resource" uid="uid://dxkvkprp701s2" path="res://Entities/Inventory/Items/soul.tres" id="1_r6dja"]
-[ext_resource type="Script" path="res://Entities/Inventory/inv_slot.gd" id="2_omqdl"]
-
-[resource]
-script = ExtResource("2_omqdl")
-item = ExtResource("1_r6dja")
-quantity = 0

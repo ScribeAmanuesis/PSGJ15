@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=3 format=3 uid="uid://gkfoy34hsuca"]
+
+[ext_resource type="Script" path="res://Scenes/Inventory/Items/Potions/potion.gd" id="1_8muxt"]
+[ext_resource type="Texture2D" uid="uid://r12klmu8g2qy" path="res://Assets/RagePotion.png" id="2_gpw3s"]
+
+[resource]
+script = ExtResource("1_8muxt")
+name = "Rage"
+texture = ExtResource("2_gpw3s")

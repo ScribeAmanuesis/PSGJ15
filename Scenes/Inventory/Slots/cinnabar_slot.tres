@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvSlot" load_steps=3 format=3 uid="uid://cxc7cr7mxjogg"]
+
+[ext_resource type="Resource" uid="uid://b8c6syobn6l6q" path="res://Scenes/Inventory/Items/Ingredients/cinnabar.tres" id="1_ntb6w"]
+[ext_resource type="Script" path="res://Scenes/Inventory/inv_slot.gd" id="2_r4amg"]
+
+[resource]
+script = ExtResource("2_r4amg")
+item = ExtResource("1_ntb6w")
+quantity = 0

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://c3ddk22tmynlc"]
+
+[ext_resource type="Script" path="res://Scenes/Inventory/inventory_item.gd" id="1_nu6vw"]
+
+[resource]
+script = ExtResource("1_nu6vw")
+name = "Salamander"

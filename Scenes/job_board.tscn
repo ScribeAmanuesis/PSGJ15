@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://natsowxm50vm"]
+[gd_scene load_steps=10 format=3 uid="uid://dlpoln4gra00o"]
 
 [ext_resource type="Texture2D" uid="uid://d082vng60afca" path="res://Assets/jobboard.png" id="1_gxl0n"]
-[ext_resource type="Script" path="res://Entities/JobBoard/job_board.gd" id="1_np168"]
+[ext_resource type="Script" path="res://Scenes/JobBoard/job_board.gd" id="1_np168"]
 [ext_resource type="Texture2D" uid="uid://b17tccxer0viv" path="res://Assets/requests.png" id="2_kmnsm"]
-[ext_resource type="Script" path="res://Entities/JobBoard/Request.gd" id="3_rxkl7"]
+[ext_resource type="Script" path="res://Scenes/JobBoard/Request.gd" id="3_rxkl7"]
 [ext_resource type="Texture2D" uid="uid://dvovauqfa8jrk" path="res://Assets/FamiliarCat.png" id="5_l3oqm"]
 [ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="6_a0ci1"]
-[ext_resource type="Script" path="res://Entities/JobBoard/Details.gd" id="7_k8tc7"]
+[ext_resource type="Script" path="res://Scenes/JobBoard/Details.gd" id="7_k8tc7"]
+[ext_resource type="PackedScene" uid="uid://dl0aomj7hunaj" path="res://Scenes/JobBoard/request.tscn" id="7_nc8o2"]
 
 [sub_resource type="GDScript" id="GDScript_wd0nn"]
 script/source = "extends Sprite2D
@@ -32,8 +33,8 @@ position = Vector2(-1, 1)
 script = ExtResource("1_np168")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(335.5, 178)
-scale = Vector2(3.115, 2.12)
+position = Vector2(276.5, 178)
+scale = Vector2(2.525, 2.12)
 texture = ExtResource("1_gxl0n")
 
 [node name="Details" type="Control" parent="."]
@@ -95,33 +96,7 @@ position = Vector2(583, 358)
 scale = Vector2(4.375, 4.4375)
 texture = ExtResource("6_a0ci1")
 
-[node name="Request1" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 54.0
-offset_top = 37.0
-offset_right = 147.0
-offset_bottom = 151.0
-script = ExtResource("3_rxkl7")
-
-[node name="Sprite2D" type="Sprite2D" parent="Request1"]
-position = Vector2(46, 58)
-scale = Vector2(3.0625, 2.65217)
-texture = ExtResource("2_kmnsm")
-script = SubResource("GDScript_wd0nn")
-
-[node name="Label" type="Label" parent="Request1"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 7.0
-offset_right = 90.0
-offset_bottom = 30.0
-text = "Potion #1"
-
-[node name="Potion" type="Sprite2D" parent="Request1"]
-position = Vector2(48, 72)
-scale = Vector2(2.9375, 3.125)
-texture = ExtResource("6_a0ci1")
+[node name="Request" parent="." instance=ExtResource("7_nc8o2")]
 
 [node name="Request2" type="Control" parent="."]
 layout_mode = 3

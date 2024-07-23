@@ -13,13 +13,12 @@ func _get_drag_data(at_position):
 	preview.add_child(preview_texture)
 	
 	set_drag_preview(preview)
-	print("dragged?")
+	print_debug("dragged?")
 	return texture
 
 func _can_drop_data(_pos, data):
 	return data is Texture2D
 
 func _drop_data(_pos, data):
-	print("dropped?")
+	print_debug("dropped?")
 	texture = data
-	print(texture.resource_path)
