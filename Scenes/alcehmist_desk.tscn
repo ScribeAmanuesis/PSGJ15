@@ -1,23 +1,13 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=9 format=3 uid="uid://b0oibgnor3jo6"]
+[gd_scene load_steps=14 format=3 uid="uid://bpmg3hwm2fgdf"]
 
 [ext_resource type="Script" path="res://PotionSFX.gd" id="1_7cfqn"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_qvj3d"]
 [ext_resource type="PackedScene" uid="uid://db2a6ff271bfa" path="res://Scenes/summoningCircle.tscn" id="4_ysglm"]
 [ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
 [ext_resource type="PackedScene" uid="uid://buk4e7js2ggj8" path="res://Scenes/Inventory/inv_ui.tscn" id="6_xhi5g"]
-=======
-[gd_scene load_steps=14 format=3 uid="uid://b0oibgnor3jo6"]
-
-[ext_resource type="Script" path="res://PotionSFX.gd" id="1_7cfqn"]
-[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_qvj3d"]
-[ext_resource type="PackedScene" path="res://Scenes/summoningCircle.tscn" id="4_ysglm"]
-[ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
-[ext_resource type="PackedScene" uid="uid://buk4e7js2ggj8" path="res://Scenes/Inventory/inv_ui.tscn" id="6_xhi5g"]
 [ext_resource type="Resource" uid="uid://b8c6syobn6l6q" path="res://Scenes/Inventory/Items/Ingredients/cinnabar.tres" id="8_n8kpg"]
 [ext_resource type="Resource" uid="uid://6i55opisnq2n" path="res://Scenes/Inventory/Items/Ingredients/mercury.tres" id="9_0sjdn"]
 [ext_resource type="Resource" uid="uid://20wtkj0v0wvi" path="res://Scenes/Inventory/Items/Ingredients/salt.tres" id="10_cns40"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://dlpoln4gra00o" path="res://Scenes/job_board.tscn" id="11_62kji"]
 [ext_resource type="Resource" uid="uid://dxkvkprp701s2" path="res://Scenes/Inventory/Items/Ingredients/soul.tres" id="11_ea2cq"]
 [ext_resource type="Texture2D" uid="uid://dc0uqeqysy56e" path="res://Assets/Ingredient.png" id="11_jyxkt"]
