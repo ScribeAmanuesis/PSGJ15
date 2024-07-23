@@ -82,8 +82,12 @@ func _on_cancel_pressed():
 		#ingredient.has_item = false
 		#ingredient.clear_texture()
 	handleButtonVisibility()
-		
-		
+
+func update_and_pop_crafting_notification(created):
+	craftingNotification.visible = true
+	craftingNotification.get_node("MarginContainer").get_node("VBoxContainer").get_node("Label").text = created.name
+	craftingNotification.get_node("MarginContainer").get_node("VBoxContainer").get_node("Image").texture = created.texture
+
 func _on_craft_pressed():
 	var valid = false
 	var ingredients : = [ingredient1.item, ingredient2.item, ingredient3.item]
@@ -93,6 +97,7 @@ func _on_craft_pressed():
 			print_debug("Valid ingredient combination for: '{result}'".format({'result':recipes[recipe].name}))
 			# TODO Find a way to determine whether to insert into potion inventory or tower inventory
 			player.potion_inv.insert(recipes[recipe])
+			update_and_pop_crafting_notification(recipes[recipe])
 			# TODO - subtract from inventory
 	if not valid:
 		print_debug("Invalid ingredient combination")

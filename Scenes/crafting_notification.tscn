@@ -58,7 +58,7 @@ text = "Crafting Successful"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Potion" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+[node name="Image" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("1_153ll")

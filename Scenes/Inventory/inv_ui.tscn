@@ -36,59 +36,6 @@ offset_right = 464.0
 offset_bottom = 368.0
 script = ExtResource("1_mrlc1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 512.0
-offset_bottom = 288.0
-color = Color(1, 0.709804, 0.588235, 1)
-
-[node name="GridContainer" type="GridContainer" parent="ColorRect"]
-layout_mode = 2
-offset_right = 512.0
-offset_bottom = 288.0
-grow_horizontal = 2
-columns = 5
-
-[node name="inv_UI_slot" parent="ColorRect/GridContainer" instance=ExtResource("2_12djd")]
-layout_mode = 2
-
-[node name="inv_UI_slot2" parent="ColorRect/GridContainer" instance=ExtResource("2_12djd")]
-layout_mode = 2
-
-[node name="inv_UI_slot3" parent="ColorRect/GridContainer" instance=ExtResource("2_12djd")]
-layout_mode = 2
-
-[node name="inv_UI_slot4" parent="ColorRect/GridContainer" instance=ExtResource("2_12djd")]
-layout_mode = 2
-
-[node name="inv_UI_slot5" parent="ColorRect/GridContainer" instance=ExtResource("2_12djd")]
-layout_mode = 2
-
-[node name="GridContainer2" type="GridContainer" parent="ColorRect"]
-layout_mode = 2
-offset_top = 112.0
-offset_right = 512.0
-offset_bottom = 400.0
-grow_horizontal = 2
-grow_vertical = 0
-columns = 5
-
-[node name="inv_UI_slot" parent="ColorRect/GridContainer2" instance=ExtResource("2_12djd")]
-layout_mode = 2
-
-[node name="inv_UI_slot2" parent="ColorRect/GridContainer2" instance=ExtResource("2_12djd")]
-layout_mode = 2
-
-[node name="inv_UI_slot3" parent="ColorRect/GridContainer2" instance=ExtResource("2_12djd")]
-layout_mode = 2
-
-[node name="inv_UI_slot4" parent="ColorRect/GridContainer2" instance=ExtResource("2_12djd")]
-layout_mode = 2
-
-[node name="inv_UI_slot5" parent="ColorRect/GridContainer2" instance=ExtResource("2_12djd")]
-layout_mode = 2
-
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_right = 460.0
@@ -125,7 +72,6 @@ layout_mode = 2
 item_resource = ExtResource("6_aqgap")
 
 [node name="inv_UI_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
-visible = false
 layout_mode = 2
 item_resource = ExtResource("7_cvjsg")
 
@@ -145,6 +91,7 @@ layout_mode = 2
 item_resource = ExtResource("9_ipt5q")
 
 [node name="inv_UI_slot4" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
+visible = false
 layout_mode = 2
 
 [node name="inv_UI_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
