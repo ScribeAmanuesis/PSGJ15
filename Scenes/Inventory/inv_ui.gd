@@ -1,8 +1,13 @@
 extends Control
 
-@onready var ingredient_inv: Inv = preload("res://Scenes/Inventory/player_ingredient_inventory.tres")
-@onready var potion_inv: Inv = preload("res://Scenes/Inventory/player_potion_inventory.tres")
-@onready var tower_inv: Inv = preload("res://Scenes/Inventory/player_tower_inventory.tres")
+#@onready var ingredient_inv: Inv = preload("res://Scenes/Inventory/player_ingredient_inventory.tres")
+#@onready var potion_inv: Inv = preload("res://Scenes/Inventory/player_potion_inventory.tres")
+#@onready var tower_inv: Inv = preload("res://Scenes/Inventory/player_tower_inventory.tres")
+
+
+@onready var ingredient_inv: Inv = Player.ingredient_inv
+@onready var potion_inv: Inv = Player.potion_inv
+@onready var tower_inv: Inv = Player.tower_inv
 
 @onready var ingredient_slots: Array = $PanelContainer/MarginContainer/VBoxContainer/Ingredients.get_children()
 @onready var potion_slots: Array = $PanelContainer/MarginContainer/VBoxContainer/Potions.get_children()
@@ -31,8 +36,8 @@ func _process(delta):
 			open()
 
 func update_slots(inv : Inv, slots : Array):
-	for i in range(min(ingredient_inv.slots.size(), ingredient_slots.size())):
-		ingredient_slots[i].update(ingredient_inv.slots[i])
+	for i in range(min(inv.slots.size(), slots.size())):
+		slots[i].update(inv.slots[i])
 	
 
 #func update_potion_slots():

@@ -2,7 +2,6 @@ extends Control
 
 class_name CraftingStation
 
-@onready var player = get_parent().get_node("Player")
 #The cauldron slots
 @onready var ingredient1#: = $Sprite2D/VBoxContainer/HBoxContainer3/IngredientDisplayPanel
 @onready var ingredient2#: = $Sprite2D/VBoxContainer/HBoxContainer3/IngredientDisplayPanel2
@@ -78,7 +77,7 @@ func any_ingredient_slots_filled() -> bool:
 
 func _on_cancel_pressed():
 	for ingredient in ingredientUsed:
-		player.ingredient_inv.insert(ingredient.item)
+		Player.ingredient_inv.insert(ingredient.item)
 		ingredient.set_item(null)
 	handleButtonVisibility()
 
@@ -95,7 +94,7 @@ func _on_craft_pressed():
 			valid = true
 			print_debug("Valid ingredient combination for: '{result}'".format({'result':recipes[recipe].name}))
 			# TODO Find a way to determine whether to insert into potion inventory or tower inventory
-			player.potion_inv.insert(recipes[recipe])
+			Player.potion_inv.insert(recipes[recipe])
 			update_and_pop_crafting_notification(recipes[recipe])
 			# TODO - subtract from inventory
 	if not valid:

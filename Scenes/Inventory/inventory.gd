@@ -8,8 +8,10 @@ signal update
 
 @export var slots: Array[InvSlot]
 
+func _ready():
+	update.emit()
+
 func insert(item: InvItem):
-	print(item)
 	var itemslots = slots.filter(func(slot): return slot.item == item)
 	if !itemslots.is_empty():
 		itemslots[0].quantity += 1

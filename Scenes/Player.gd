@@ -1,13 +1,13 @@
 extends Node2D
-class_name Player
 
 # Stats
 var wave : = 1 # Wave Counter for the TD Portion
 #var requests : = []   NOT CURRENTLY IN USE
 #var shadows : = []  NOT CURRENTLY IN USE
+
 # Inventories
-var potion_inv : Inv = preload("res://Scenes/Inventory/player_potion_inventory.tres")
 var ingredient_inv : Inv = preload("res://Scenes/Inventory/player_ingredient_inventory.tres")
+var potion_inv : Inv = preload("res://Scenes/Inventory/player_potion_inventory.tres")
 var tower_inv : Inv = preload("res://Scenes/Inventory/player_tower_inventory.tres")
 
 #region Resources
@@ -44,7 +44,7 @@ var ingredients_legend: Array[InvItem] = [CINNABAR,MERCURY,SALT,SOUL,SULFUR]
 #func collect(item):
 	#ingredient_inv.insert(item)
 
-func _on_placeholder_inventory_increment_mouse_entered():
+func add_random_ingredients():
 	for i in range(10):
 		ingredient_inv.insert(ingredients_legend.pick_random())
 

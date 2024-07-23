@@ -1,7 +1,32 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=2 format=3 uid="uid://chx5wtajyckna"]
+[gd_resource type="Resource" script_class="Inv" load_steps=11 format=3 uid="uid://chx5wtajyckna"]
 
 [ext_resource type="Script" path="res://Scenes/Inventory/inventory.gd" id="1_1fk2w"]
+[ext_resource type="Resource" uid="uid://dacccr6uxs6b2" path="res://Scenes/Inventory/Items/Towers/cat.tres" id="2_q3xio"]
+[ext_resource type="Script" path="res://Scenes/Inventory/inv_slot.gd" id="3_ajpdb"]
+[ext_resource type="Resource" uid="uid://dq340ogej4qdj" path="res://Scenes/Inventory/Items/Towers/owl.tres" id="4_atkn6"]
+[ext_resource type="Resource" uid="uid://bh5e4wuek21ib" path="res://Scenes/Inventory/Items/Towers/pixie.tres" id="5_nk65l"]
+[ext_resource type="Resource" uid="uid://c3ddk22tmynlc" path="res://Scenes/Inventory/Items/Towers/salamander.tres" id="6_ap817"]
+
+[sub_resource type="Resource" id="Resource_kqd7r"]
+script = ExtResource("3_ajpdb")
+item = ExtResource("2_q3xio")
+quantity = 0
+
+[sub_resource type="Resource" id="Resource_kqe2q"]
+script = ExtResource("3_ajpdb")
+item = ExtResource("4_atkn6")
+quantity = 0
+
+[sub_resource type="Resource" id="Resource_um70f"]
+script = ExtResource("3_ajpdb")
+item = ExtResource("5_nk65l")
+quantity = 0
+
+[sub_resource type="Resource" id="Resource_h3m51"]
+script = ExtResource("3_ajpdb")
+item = ExtResource("6_ap817")
+quantity = 0
 
 [resource]
 script = ExtResource("1_1fk2w")
-slots = Array[Resource("res://Scenes/Inventory/inv_slot.gd")]([])
+slots = Array[ExtResource("3_ajpdb")]([SubResource("Resource_kqd7r"), SubResource("Resource_kqe2q"), SubResource("Resource_um70f"), SubResource("Resource_h3m51")])
