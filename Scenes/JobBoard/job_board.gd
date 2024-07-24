@@ -1,50 +1,27 @@
 extends PanelContainer
 
-var peopleName = [
-	"Alice",
-	"Bob",
-	"Charlie",
-	"David",
-	"Eve",
-	"Frank",
-	"Grace",
-	"Hannah",
-	"Ian",
-	"Jack",
-	"Kara",
-	"Liam",
-	"Mia",
-	"Nina",
-	"Oliver",
-	"Paul",
-	"Quinn",
-	"Ruby",
-	"Sam",
-	"Tina"
-]
+var Alice: Job = preload("res://Scenes/JobBoard/Jobs/Alice.tres")
+var Bob: Job = preload("res://Scenes/JobBoard/Jobs/Bob.tres")
+var Charlie: Job = preload("res://Scenes/JobBoard/Jobs/Charlie.tres")
+var David: Job = preload("res://Scenes/JobBoard/Jobs/David.tres")
+var Eve: Job = preload("res://Scenes/JobBoard/Jobs/Eve.tres")
+var Frank: Job = preload("res://Scenes/JobBoard/Jobs/Frank.tres")
+var Grace: Job = preload("res://Scenes/JobBoard/Jobs/Grace.tres")
+var Hannah: Job = preload("res://Scenes/JobBoard/Jobs/Hannah.tres")
+var Ian: Job = preload("res://Scenes/JobBoard/Jobs/Ian.tres")
+var Jack: Job = preload("res://Scenes/JobBoard/Jobs/Jack.tres")
+var Kara: Job = preload("res://Scenes/JobBoard/Jobs/Kara.tres")
+var Liam: Job = preload("res://Scenes/JobBoard/Jobs/Liam.tres")
+var Mia: Job = preload("res://Scenes/JobBoard/Jobs/Mia.tres")
+var Nina: Job = preload("res://Scenes/JobBoard/Jobs/Nina.tres")
+var Oliver: Job = preload("res://Scenes/JobBoard/Jobs/Oliver.tres")
+var Paul: Job = preload("res://Scenes/JobBoard/Jobs/Paul.tres")
+var Quinn: Job = preload("res://Scenes/JobBoard/Jobs/Quinn.tres")
+var Ruby: Job = preload("res://Scenes/JobBoard/Jobs/Ruby.tres")
+var Sam: Job = preload("res://Scenes/JobBoard/Jobs/Sam.tres")
+var Tina: Job = preload("res://Scenes/JobBoard/Jobs/Tina.tres")
 
-var flavorTexts = [
-	"A curious explorer always seeking new adventures.",
-	"The reliable friend who is always there to lend a hand.",
-	"An energetic spirit with a passion for creativity.",
-	"A wise and thoughtful soul with a knack for problem-solving.",
-	"A tech-savvy genius who loves unraveling mysteries.",
-	"A strong and silent type with a heart of gold.",
-	"An elegant presence with a talent for bringing people together.",
-	"A joyful personality who spreads positivity wherever she goes.",
-	"A clever strategist with a love for puzzles.",
-	"A brave adventurer always ready to take on new challenges.",
-	"A compassionate healer with a gift for empathy.",
-	"A charismatic leader who inspires those around him.",
-	"A creative artist with a vivid imagination.",
-	"A curious mind with an endless thirst for knowledge.",
-	"A charming storyteller who captivates his audience.",
-	"A steady and reliable presence in any situation.",
-	"A free spirit who dances to the beat of their own drum.",
-	"A fiery personality with a passion for justice.",
-	"A versatile and adaptable friend who can fit into any role.",
-	"A meticulous planner with a keen eye for detail."
-]
+var jobs = [Alice, Bob, Charlie, David, Eve, Frank, Grace, Hannah, Ian, Jack, Kara, Liam, Mia, Nina, Oliver, Paul, Quinn, Ruby, Sam, Tina]
 
 var potions = [
 	"Health Potion",
@@ -52,16 +29,11 @@ var potions = [
 	"Rage Potion",
 ]
 
-var bother: Texture2D = preload("res://Assets/EnemyBother.png")
-var fret: Texture2D = preload("res://Assets/EnemyFret.png")
-var woe: Texture2D = preload("res://Assets/EnemyWoe.png")
-var worry: Texture2D = preload("res://Assets/EnemyWorry.png")
-var shadows = [
-	bother,
-	fret,
-	woe,
-	worry
-]
+#var bother: Texture2D = preload("res://Assets/EnemyBother.png")
+#var fret: Texture2D = preload("res://Assets/EnemyFret.png")
+#var woe: Texture2D = preload("res://Assets/EnemyWoe.png")
+#var worry: Texture2D = preload("res://Assets/EnemyWorry.png")
+#var shadows = [bother,fret,woe,worry]
 
 @onready var details : PopupPanel= $Details
 @onready var requests_container = $GridContainer

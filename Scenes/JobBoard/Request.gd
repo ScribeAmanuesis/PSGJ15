@@ -4,15 +4,18 @@ var personName: String
 var potionName: String
 var flavorText: String
 var shadow: Texture2D
+var job: Job
 #var currentNodeName:String
 
 @onready var parent : = get_parent().get_parent()
 
 func _ready():
-	personName = parent.peopleName.pick_random()
-	potionName = parent.potions.pick_random()
-	flavorText = parent.flavorTexts[parent.peopleName.find(personName)]
-	shadow = parent.shadows.pick_random()
+	job = parent.jobs.pick_random()
+	
+	personName = job.name
+	potionName = job.potion.name
+	flavorText = job.flavorText
+	shadow = job.shadowImage
 
 #
 #func _pressed():

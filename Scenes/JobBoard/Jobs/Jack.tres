@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Job" load_steps=4 format=3 uid="uid://c2glx34nvbvd4"]
+
+[ext_resource type="Resource" uid="uid://gkfoy34hsuca" path="res://Scenes/Inventory/Items/Potions/rage_potion.tres" id="1_thncv"]
+[ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_47xpb"]
+[ext_resource type="Texture2D" uid="uid://di42h6v3qf0kj" path="res://Assets/EnemyFret.png" id="3_k4gbs"]
+
+[resource]
+script = ExtResource("2_47xpb")
+name = "Jack"
+flavorText = "A brave adventurer always ready to take on new challenges."
+potion = ExtResource("1_thncv")
+shadow = "Fret"
+shadowImage = ExtResource("3_k4gbs")
