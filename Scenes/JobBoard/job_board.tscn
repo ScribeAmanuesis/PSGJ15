@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlpoln4gra00o"]
+
+[ext_resource type="Script" path="res://Scenes/JobBoard/job_board.gd" id="1_np168"]
+[ext_resource type="PackedScene" uid="uid://ctog12c60j2br" path="res://Scenes/JobBoard/RequestDetails.tscn" id="2_xyavx"]
+[ext_resource type="PackedScene" uid="uid://dl0aomj7hunaj" path="res://Scenes/JobBoard/request.tscn" id="7_nc8o2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knwso"]
+bg_color = Color(0.6, 0.266667, 0.0313726, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(0.219608, 0.0980392, 0.0117647, 1)
+border_blend = true
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="JobBoard" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -721.0
+offset_bottom = -314.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_knwso")
+script = ExtResource("1_np168")
+
+[node name="Details" parent="." instance=ExtResource("2_xyavx")]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 4
+
+[node name="Request" parent="GridContainer" instance=ExtResource("7_nc8o2")]
+layout_mode = 2
+
+[node name="Request2" parent="GridContainer" instance=ExtResource("7_nc8o2")]
+layout_mode = 2
+
+[node name="Request3" parent="GridContainer" instance=ExtResource("7_nc8o2")]
+layout_mode = 2
+
+[node name="Request4" parent="GridContainer" instance=ExtResource("7_nc8o2")]
+layout_mode = 2
+
+[node name="Request5" parent="GridContainer" instance=ExtResource("7_nc8o2")]
+layout_mode = 2
+
+[node name="Request6" parent="GridContainer" instance=ExtResource("7_nc8o2")]
+layout_mode = 2
+
+[node name="Request7" parent="GridContainer" instance=ExtResource("7_nc8o2")]
+layout_mode = 2
+
+[node name="Request8" parent="GridContainer" instance=ExtResource("7_nc8o2")]
+layout_mode = 2

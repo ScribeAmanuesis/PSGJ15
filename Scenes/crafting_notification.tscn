@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2l1famc67ewk"]
 
 [ext_resource type="Script" path="res://Scenes/crafting_notification.gd" id="1_1aol4"]
-[ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="1_153ll"]
+[ext_resource type="Texture2D" uid="uid://jk4gm08nhgwj" path="res://Assets/HealthPotion.png" id="1_153ll"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thtux"]
 bg_color = Color(0.756863, 0.556863, 0.352941, 1)

@@ -1,52 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl0aomj7hunaj"]
+[gd_scene load_steps=4 format=3 uid="uid://dl0aomj7hunaj"]
 
 [ext_resource type="Script" path="res://Scenes/JobBoard/Request.gd" id="1_iq76n"]
 [ext_resource type="Texture2D" uid="uid://b17tccxer0viv" path="res://Assets/requests.png" id="2_bkle0"]
-[ext_resource type="Texture2D" uid="uid://c60w0dig3cg44" path="res://Assets/Potion.png" id="3_70tml"]
+[ext_resource type="Texture2D" uid="uid://jk4gm08nhgwj" path="res://Assets/HealthPotion.png" id="3_70tml"]
 
-[sub_resource type="GDScript" id="GDScript_wd0nn"]
-script/source = "extends Sprite2D
-var currentNodeName:String
-func _input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if get_rect().has_point(to_local(event.position)):
-			print(\"clicked on\")
-			handleVisibility()
-
-func handleVisibility():
-	currentNodeName = get_parent().name
-	#print(currentNodeName)
-	var req_num = currentNodeName.split(\"Request\")[1]
-	get_parent().get_parent().get_node(\"Details\").toggle_menu(req_num)
-	
-func _ready():
-	pass # Replace with function body.
-"
-
-[node name="Request1" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 54.0
-offset_top = 37.0
-offset_right = 147.0
-offset_bottom = 151.0
+[node name="Request" type="TextureButton"]
+offset_right = 130.0
+offset_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("2_bkle0")
+stretch_mode = 0
 script = ExtResource("1_iq76n")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(46, 58)
-scale = Vector2(3.0625, 2.65217)
-texture = ExtResource("2_bkle0")
-script = SubResource("GDScript_wd0nn")
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 7.0
-offset_right = 90.0
-offset_bottom = 30.0
-text = "Potion #1"
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
 
-[node name="Potion" type="Sprite2D" parent="."]
-position = Vector2(48, 72)
-scale = Vector2(2.9375, 3.125)
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Potion"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("3_70tml")
+expand_mode = 5
+stretch_mode = 5

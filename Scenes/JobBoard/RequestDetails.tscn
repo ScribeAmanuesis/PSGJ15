@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctog12c60j2br"]
+
+[ext_resource type="Script" path="res://Scenes/JobBoard/Details.gd" id="1_sere5"]
+[ext_resource type="Texture2D" uid="uid://b17tccxer0viv" path="res://Assets/requests.png" id="2_y45dm"]
+[ext_resource type="Texture2D" uid="uid://dvovauqfa8jrk" path="res://Assets/FamiliarCat.png" id="3_a5khn"]
+[ext_resource type="Texture2D" uid="uid://jk4gm08nhgwj" path="res://Assets/HealthPotion.png" id="4_fhpqr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t3woj"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("2_y45dm")
+
+[node name="Details" type="PopupPanel"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+initial_position = 1
+size = Vector2i(410, 500)
+visible = true
+theme_override_styles/panel = SubResource("StyleBoxTexture_t3woj")
+script = ExtResource("1_sere5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 394.0
+offset_bottom = 484.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 35
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shadow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Shadow"]
+layout_mode = 2
+texture = ExtResource("3_a5khn")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/Shadow"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "A talking that that"
+
+[node name="Requirements" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Requirements"]
+layout_mode = 2
+text = "Requirements"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Requirements"]
+layout_mode = 2
+texture = ExtResource("4_fhpqr")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Turn In
+"

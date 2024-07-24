@@ -28,7 +28,7 @@ func set_item_resource(item : InvItem):
 		if item:
 			item_visual.texture = item_resource.texture
 			item_name.text = item_resource.name
-			quantity_text.text = str(quantity)
+			update_quantity()
 			container.visible = true
 		else:
 			container.visible = false
@@ -37,7 +37,7 @@ func update(slot : InvSlot):
 	if item_resource != slot.item:
 		set_item_resource(slot.item)
 	quantity = slot.quantity
-	quantity_text.text = str(slot.quantity)
+	update_quantity()
 
 func _get_drag_data(at_position):
 	if quantity < 1:
@@ -45,13 +45,13 @@ func _get_drag_data(at_position):
 	
 	var preview_texture = TextureRect.new()
 	
+	quantity_text.text = str(quantity)
 	preview_texture.texture = item_resource.texture
 	preview_texture.expand_mode = 1
 	preview_texture.size = Vector2(32,32)
 	
-	quantity -= 1
-	quantity_text.text = str(quantity)
 	get_inventory().consume(item_resource)
+	update_quantity()
 	
 	set_drag_preview(preview_texture)
 	return item_resource
@@ -60,7 +60,10 @@ func _can_drop_data(_pos, data):
 	return data is InvItem and data == item_resource
 
 func _drop_data(_pos, data):
-	quantity += 1
+	get_inventory().insert(item_resource)
+	update_quantity()
+	
+func update_quantity():
 	quantity_text.text = str(quantity)
 	
 func get_inventory() -> Inv:

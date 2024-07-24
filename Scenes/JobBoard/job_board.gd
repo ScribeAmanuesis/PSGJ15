@@ -1,6 +1,5 @@
-extends Node2D
+extends PanelContainer
 
-var test = "hello world"
 var peopleName = [
 	"Alice",
 	"Bob",
@@ -48,8 +47,8 @@ var flavorTexts = [
 ]
 
 var potions = [
-	"Thunder Potion",
-	"Damage Potion",
+	"Health Potion",
+	"Slime Potion",
 	"Rage Potion",
 ]
 
@@ -64,13 +63,22 @@ var shadows = [
 	worry
 ]
 
-# Called when the node enters the scene tree for the first time.
+@onready var details : PopupPanel= $Details
+@onready var requests_container = $GridContainer
+
 func _ready():
-	#print(peopleName)
-	pass
-	
+	for request in requests_container.get_children():
+		request.pressed.connect(details.set_text.bindv([
+			request.personName,
+			request.flavorText,
+			request.shadow,
+			request.potionName
+		]))
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _input(event):
+	if Input.is_action_just_pressed("ui_accept"):
+		details.show()
+
+
+

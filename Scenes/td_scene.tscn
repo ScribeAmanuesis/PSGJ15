@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://djvu1vrl68rpr"]
+[gd_scene load_steps=17 format=3 uid="uid://djvu1vrl68rpr"]
 
 [ext_resource type="Texture2D" uid="uid://cb3mop4wy18pg" path="res://Assets/AlchemyShadowPack_AutoTile.png" id="1_5l7cl"]
 [ext_resource type="Texture2D" uid="uid://dw2bcx53cqr67" path="res://Assets/AlchemyShadowPack_Basic.png" id="1_ac2rv"]
@@ -11,13 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://ch3ahwxp71dfk" path="res://Entities/Towers/pixie.tscn" id="7_tlpxl"]
 [ext_resource type="PackedScene" uid="uid://di10byji875sa" path="res://Entities/Enemies/woe.tscn" id="8_85ngv"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y5wdy"]
+blend_mode = 3
+
 [sub_resource type="Environment" id="Environment_drkys"]
 background_mode = 3
 tonemap_mode = 3
 glow_enabled = true
-glow_blend_mode = 1
+glow_blend_mode = 0
 glow_hdr_threshold = 1.5
 glow_hdr_scale = 4.0
+adjustment_enabled = true
+adjustment_brightness = 1.5
+adjustment_contrast = 1.05
+adjustment_saturation = 1.5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypmrh"]
 texture = ExtResource("1_5l7cl")
@@ -133,7 +140,7 @@ point_count = 206
 [node name="TestSpace" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
+material = SubResource("CanvasItemMaterial_y5wdy")
 color = Color(0, 0, 0, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -164,6 +171,10 @@ position = Vector2(528, 8)
 
 [node name="Salamander" parent="Towers" instance=ExtResource("4_r8e3r")]
 position = Vector2(-96, 232)
+
+[node name="Salamander2" parent="Towers" instance=ExtResource("4_r8e3r")]
+z_index = 7
+position = Vector2(-32, 232)
 
 [node name="Cat" parent="Towers" instance=ExtResource("6_yj5mm")]
 position = Vector2(-288, 552)

@@ -1,21 +1,36 @@
-extends Control
+extends PopupPanel
 
-var activePoster: int 
-var self_opened = false
-# Called when the node enters the scene tree for the first time.
-func toggle_menu(posternum):
-	var req = "Request{num}".format({'num':posternum})
-	get_node("PersonName").text = get_parent().get_node(req).personName
-	get_node("FlavorText").text = get_parent().get_node(req).flavorText
-	get_node("Shadow").texture = get_parent().get_node(req).shadow
-	
-	if activePoster == int(req) and self.visible:
-		self.visible = false
-	else:
-		self.visible = true
-	activePoster = int(req)
+@onready var title_text : = $VBoxContainer/Title
+@onready var shadow_tex : = $VBoxContainer/Shadow/TextureRect
+@onready var flavor_text : = $VBoxContainer/Shadow/Label
+@onready var potion_text : = $VBoxContainer/Requirements/Label
 
-func _ready():
-	#print(get_parent())
-	pass
+@onready var button : = $VBoxContainer/Button
+
+#@onready var parent : = get_parent()
+
+#var activePoster: int 
+#var self_opened = false
+
+#func _ready():
+	#button.pressed.connect(toggle_menu)
+	#
+#
+#func toggle_menu(posternum):
+	#var req = "Request{num}".format({'num':posternum})
+	#title.text = parent.get_node(req).personName
+	#flavor_text.text = parent.get_node(req).flavorText
+	#shadow_tex.texture = parent.get_node(req).shadow
+	#
+	#if activePoster == int(req) and self.visible:
+		#self.visible = false
+	#else:
+		#self.visible = true
+	#activePoster = int(req)
 	
+func set_text(new_title : String, flavor : String, shadow : Texture2D, potion_name : String):
+	title_text.text = new_title
+	flavor_text.text = flavor
+	shadow_tex.texture = shadow
+	potion_text.text = potion_name
+	show()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://87wqpp6umgd"]
+[gd_scene load_steps=13 format=3 uid="uid://87wqpp6umgd"]
 
 [ext_resource type="Script" path="res://Entities/Enemies/Enemy.gd" id="1_iqti4"]
 [ext_resource type="Script" path="res://Components/HealthComponent.gd" id="2_1yfsk"]
@@ -34,12 +34,15 @@ shader = SubResource("Shader_lniv2")
 
 [sub_resource type="Gradient" id="Gradient_plprh"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.5, 1)
+offsets = PackedFloat32Array(0.2, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.064, 0.064, 0.064, 0.064, 0, 0, 0, 0)
 metadata/_snap_enabled = true
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_voelv"]
 gradient = SubResource("Gradient_plprh")
+width = 128
+height = 128
+use_hdr = true
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.9, 0.2)
@@ -47,6 +50,9 @@ metadata/_snap_enabled = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5kog6"]
 radius = 16.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uqb27"]
+polygon = PackedVector2Array(0, -8, -8, 0, 0, 8, 8, 0)
 
 [node name="Enemy" type="PathFollow2D"]
 rotates = false
@@ -62,10 +68,11 @@ self_modulate = Color(2, 2, 2, 1)
 texture = ExtResource("2_qyh27")
 
 [node name="Shadow" type="PointLight2D" parent="."]
-visible = false
 blend_mode = 1
+shadow_enabled = true
+shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_voelv")
-texture_scale = 8.0
+texture_scale = 4.0
 
 [node name="Collision" type="Area2D" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("4_fupc3")
@@ -79,6 +86,7 @@ script = ExtResource("2_lrhgw")
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("2_1yfsk")
+health = 50
 
 [node name="Label" type="Label" parent="HealthComponent"]
 visible = false
@@ -97,3 +105,8 @@ grow_vertical = 2
 text = "Health: 10"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.45098)
+occluder = SubResource("OccluderPolygon2D_uqb27")

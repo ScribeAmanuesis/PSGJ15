@@ -26,7 +26,6 @@ script = ExtResource("1_xj8io")
 item_resource = null
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 2

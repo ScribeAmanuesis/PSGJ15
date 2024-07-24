@@ -101,12 +101,14 @@ item_type = 1
 [node name="inv_UI_slot4" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
 visible = false
 layout_mode = 2
+item_resource = ExtResource("9_c47gi")
 item_type = 1
 quantity = 1
 
 [node name="inv_UI_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
 visible = false
 layout_mode = 2
+item_resource = ExtResource("9_c47gi")
 item_type = 1
 quantity = 1
 
@@ -140,5 +142,6 @@ quantity = 1
 [node name="inv_UI_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
 visible = false
 layout_mode = 2
+item_resource = ExtResource("9_c47gi")
 item_type = 2
 quantity = 1

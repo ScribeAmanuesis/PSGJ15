@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://db2a6ff271bfa" path="res://Scenes/summoningCircle.tscn" id="4_ysglm"]
 [ext_resource type="Texture2D" uid="uid://bs3txniubbk5x" path="res://Assets/Recipe.png" id="6_5gb5f"]
 [ext_resource type="PackedScene" uid="uid://buk4e7js2ggj8" path="res://Scenes/Inventory/inv_ui.tscn" id="6_xhi5g"]
-[ext_resource type="PackedScene" uid="uid://dlpoln4gra00o" path="res://Scenes/job_board.tscn" id="11_62kji"]
+[ext_resource type="PackedScene" uid="uid://dlpoln4gra00o" path="res://Scenes/JobBoard/job_board.tscn" id="11_62kji"]
 [ext_resource type="Texture2D" uid="uid://dc0uqeqysy56e" path="res://Assets/Ingredient.png" id="11_jyxkt"]
 [ext_resource type="PackedScene" uid="uid://ci4a767mt5ixe" path="res://Scenes/cauldron.tscn" id="13_rgf4r"]
 
@@ -48,7 +48,11 @@ stretch_mode = 5
 script = SubResource("GDScript_5dlxe")
 
 [node name="JobBoard" parent="." instance=ExtResource("11_62kji")]
-position = Vector2(-47, -29)
+layout_mode = 1
+offset_left = 35.0
+offset_top = 27.0
+offset_right = -1763.0
+offset_bottom = -975.0
 
 [node name="ItemInventory" parent="." instance=ExtResource("6_xhi5g")]
 offset_left = 584.0
