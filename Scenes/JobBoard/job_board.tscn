@@ -29,6 +29,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_knwso")
 script = ExtResource("1_np168")
 
 [node name="Details" parent="." instance=ExtResource("2_xyavx")]
+visible = false
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 2

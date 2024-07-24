@@ -169,6 +169,7 @@ offset_bottom = 75.0
 text = "Cancel"
 
 [node name="Notification" parent="." instance=ExtResource("4_6fja6")]
+visible = false
 layout_mode = 1
 offset_left = 1.0
 offset_top = -289.0
