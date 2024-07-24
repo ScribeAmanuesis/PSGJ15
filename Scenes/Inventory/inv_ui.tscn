@@ -58,22 +58,27 @@ layout_mode = 2
 [node name="inv_UI_slot" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("3_ipr4o")
+quantity = 1
 
 [node name="inv_UI_slot2" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("4_nlm6v")
+quantity = 1
 
 [node name="inv_UI_slot3" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("5_t8fu7")
+quantity = 1
 
 [node name="inv_UI_slot4" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("6_aqgap")
+quantity = 1
 
 [node name="inv_UI_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/Ingredients" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("7_cvjsg")
+quantity = 1
 
 [node name="Potions" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -81,25 +86,29 @@ layout_mode = 2
 [node name="inv_UI_slot" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("8_3okel")
-quantity = 0
+item_type = 1
 
 [node name="inv_UI_slot2" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("9_c47gi")
-quantity = 0
+item_type = 1
 
 [node name="inv_UI_slot3" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("9_ipt5q")
-quantity = 0
+item_type = 1
 
 [node name="inv_UI_slot4" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
 visible = false
 layout_mode = 2
+item_type = 1
+quantity = 1
 
 [node name="inv_UI_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/Potions" instance=ExtResource("2_12djd")]
 visible = false
 layout_mode = 2
+item_type = 1
+quantity = 1
 
 [node name="Towers" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -107,19 +116,29 @@ layout_mode = 2
 [node name="inv_UI_slot" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("10_n3pqd")
+item_type = 2
+quantity = 1
 
 [node name="inv_UI_slot2" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("12_gqbd8")
+item_type = 2
+quantity = 1
 
 [node name="inv_UI_slot3" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("13_kp5et")
+item_type = 2
+quantity = 1
 
 [node name="inv_UI_slot4" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
 layout_mode = 2
 item_resource = ExtResource("14_qfpn4")
+item_type = 2
+quantity = 1
 
 [node name="inv_UI_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/Towers" instance=ExtResource("2_12djd")]
 visible = false
 layout_mode = 2
+item_type = 2
+quantity = 1

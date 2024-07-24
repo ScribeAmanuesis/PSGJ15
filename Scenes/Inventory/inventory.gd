@@ -3,6 +3,9 @@ extends Resource
 class_name Inv
 
 signal update
+signal item_added
+signal item_removed
+
 
 #@export var ingredient_legend: Array[InvItem]
 
@@ -21,8 +24,9 @@ func insert(item: InvItem):
 			emptyslots[0].item = item
 			emptyslots[0].quantity = 1
 	update.emit()
+	item_added.emit()
 
-func consume(item: InvItem, amount: int):
+func consume(item: InvItem, amount: = 1):
 	var itemslots = slots.filter(func(slot): return slot.item == item)
 	if !itemslots.is_empty():
 		if(itemslots[0].quantity >= amount):
@@ -30,3 +34,4 @@ func consume(item: InvItem, amount: int):
 		else:
 			print("Not enough materials")
 	update.emit()
+	item_removed.emit()

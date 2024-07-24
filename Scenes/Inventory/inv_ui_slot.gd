@@ -4,7 +4,14 @@ extends PanelContainer
 @export var item_resource : InvItem = preload("res://Scenes/Inventory/Items/Potions/rage_potion.tres"):
 	set = set_item_resource
 	
-@export var quantity : = 1 
+@export var item_type : ITEM_TYPE
+enum ITEM_TYPE {
+	INGREDIENT,
+	POTION,
+	TOWER
+}
+	
+@export var quantity : = 0
 
 @onready var item_visual: TextureRect = $MarginContainer/VBoxContainer/TextureRect
 @onready var item_name: Label = $MarginContainer/VBoxContainer/HBoxContainer/Label
@@ -32,17 +39,6 @@ func update(slot : InvSlot):
 	quantity = slot.quantity
 	quantity_text.text = str(slot.quantity)
 
-#func update(slot: InvSlot):
-	#if !slot.item:
-		#item_visual.visible = false
-	#else:
-		#item_visual.visible = true
-		#item_visual.texture = slot.item.texture
-		#item_name.visible = true
-		#item_name.text = slot.item.name
-		#quantity_text.visible = true
-		#quantity_text.text = str(slot.quantity)
-
 func _get_drag_data(at_position):
 	if quantity < 1:
 		return null
@@ -53,10 +49,9 @@ func _get_drag_data(at_position):
 	preview_texture.expand_mode = 1
 	preview_texture.size = Vector2(32,32)
 	
-	#var preview = Control.new()
-	#preview.add_child(preview_texture)
 	quantity -= 1
 	quantity_text.text = str(quantity)
+	get_inventory().consume(item_resource)
 	
 	set_drag_preview(preview_texture)
 	return item_resource
@@ -68,3 +63,15 @@ func _drop_data(_pos, data):
 	quantity += 1
 	quantity_text.text = str(quantity)
 	
+func get_inventory() -> Inv:
+	match item_type:
+		ITEM_TYPE.INGREDIENT:
+			return Player.ingredient_inv
+		ITEM_TYPE.POTION:
+			return Player.potion_inv
+		ITEM_TYPE.TOWER:
+			return Player.tower_inv
+		_:
+			print_debug("There must be an inventory assigned")
+			assert(false)
+			return
