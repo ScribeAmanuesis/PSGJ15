@@ -2,8 +2,8 @@ extends Node2D
 
 # Stats
 var wave : = 1 # Wave Counter for the TD Portion
-#var requests : = []   NOT CURRENTLY IN USE
-#var shadows : = []  NOT CURRENTLY IN USE
+var requests : = []
+var shadows : = []
 
 # Inventories
 var ingredient_inv : Inv = preload("res://Scenes/Inventory/player_ingredient_inventory.tres")
@@ -29,7 +29,6 @@ const OWL = preload("res://Scenes/Inventory/Items/Towers/owl.tres")
 const PIXIE = preload("res://Scenes/Inventory/Items/Towers/pixie.tres")
 const SALAMANDER = preload("res://Scenes/Inventory/Items/Towers/salamander.tres")
 #endregion
-
 var ingredients_legend: Array[InvItem] = [CINNABAR,MERCURY,SALT,SOUL,SULFUR]
 
 

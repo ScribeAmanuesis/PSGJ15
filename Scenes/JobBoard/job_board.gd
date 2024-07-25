@@ -46,6 +46,9 @@ func _ready():
 			request.shadow,
 			request.potionName
 		]))
+		request.pressed.connect(details.set_shadow_name.bindv([
+			request.shadowName
+		]))
 
 
 func _input(event):

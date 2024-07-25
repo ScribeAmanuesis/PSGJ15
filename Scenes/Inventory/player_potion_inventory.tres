@@ -23,4 +23,4 @@ quantity = 0
 
 [resource]
 script = ExtResource("1_2equv")
-slots = [SubResource("Resource_m82ye"), SubResource("Resource_mrlp8"), SubResource("Resource_wbt7o")]
+slots = Array[ExtResource("3_8igph")]([SubResource("Resource_m82ye"), SubResource("Resource_mrlp8"), SubResource("Resource_wbt7o")])

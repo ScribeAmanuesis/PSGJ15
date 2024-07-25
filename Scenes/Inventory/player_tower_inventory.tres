@@ -29,4 +29,4 @@ quantity = 0
 
 [resource]
 script = ExtResource("1_1fk2w")
-slots = [SubResource("Resource_kqd7r"), SubResource("Resource_kqe2q"), SubResource("Resource_um70f"), SubResource("Resource_h3m51")]
+slots = Array[ExtResource("3_ajpdb")]([SubResource("Resource_kqd7r"), SubResource("Resource_kqe2q"), SubResource("Resource_um70f"), SubResource("Resource_h3m51")])
