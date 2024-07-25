@@ -17,6 +17,8 @@ func _ready():
 
 func turnIn():
 	Player.shadows.erase(shadow)
+	button.text = "Completed"
+	button.disabled = true
 #
 #func toggle_menu(posternum):
 	#var req = "Request{num}".format({'num':posternum})
