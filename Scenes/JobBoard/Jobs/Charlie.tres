@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Job" load_steps=4 format=3 uid="uid://kk7yl5elugvb"]
+[gd_resource type="Resource" script_class="Job" load_steps=5 format=3 uid="uid://kk7yl5elugvb"]
 
 [ext_resource type="Resource" uid="uid://ctr2c8pn73rmf" path="res://Scenes/Inventory/Items/Potions/health_potion.tres" id="1_57xi4"]
 [ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_7v12y"]
 [ext_resource type="PackedScene" uid="uid://di10byji875sa" path="res://Entities/Enemies/woe.tscn" id="3_fydti"]
+[ext_resource type="Texture2D" uid="uid://cmbo27kdirt0" path="res://Assets/EnemyWoe.png" id="3_viptj"]
 
 [resource]
 script = ExtResource("2_7v12y")
@@ -11,3 +12,4 @@ flavorText = "An energetic spirit with a passion for creativity."
 potion = ExtResource("1_57xi4")
 shadow = "Woe"
 shadowObject = ExtResource("3_fydti")
+shadowImage = ExtResource("3_viptj")

@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Job" load_steps=4 format=3 uid="uid://b80h4qn7qphvh"]
+[gd_resource type="Resource" script_class="Job" load_steps=5 format=3 uid="uid://b80h4qn7qphvh"]
 
 [ext_resource type="Resource" uid="uid://bcx1qn8yvgabj" path="res://Scenes/Inventory/Items/Potions/slime_potion.tres" id="1_88g1x"]
 [ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_y3pls"]
 [ext_resource type="PackedScene" uid="uid://dwl8tsgpesjlp" path="res://Entities/Enemies/bother.tscn" id="3_o54f7"]
+[ext_resource type="Texture2D" uid="uid://dgkn5s8q71opy" path="res://Assets/EnemyBother.png" id="3_wmdp8"]
 
 [resource]
 script = ExtResource("2_y3pls")
@@ -11,3 +12,4 @@ flavorText = "A tech-savvy genius who loves unraveling mysteries."
 potion = ExtResource("1_88g1x")
 shadow = "Bother"
 shadowObject = ExtResource("3_o54f7")
+shadowImage = ExtResource("3_wmdp8")

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Job" load_steps=4 format=3 uid="uid://dcujbemhagbco"]
+[gd_resource type="Resource" script_class="Job" load_steps=5 format=3 uid="uid://dcujbemhagbco"]
 
 [ext_resource type="Resource" uid="uid://ctr2c8pn73rmf" path="res://Scenes/Inventory/Items/Potions/health_potion.tres" id="1_2s67c"]
 [ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_pn25s"]
+[ext_resource type="Texture2D" uid="uid://cmbo27kdirt0" path="res://Assets/EnemyWoe.png" id="3_ecuxb"]
 [ext_resource type="PackedScene" uid="uid://di10byji875sa" path="res://Entities/Enemies/woe.tscn" id="3_xgi5s"]
 
 [resource]
@@ -11,3 +12,4 @@ flavorText = "A charming storyteller who captivates his audience."
 potion = ExtResource("1_2s67c")
 shadow = "Woe"
 shadowObject = ExtResource("3_xgi5s")
+shadowImage = ExtResource("3_ecuxb")

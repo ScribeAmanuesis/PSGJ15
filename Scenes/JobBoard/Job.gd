@@ -7,3 +7,4 @@ class_name Job
 @export var potion: Potion
 @export var shadow: String = ""
 @export var shadowObject: PackedScene
+@export var shadowImage: Texture2D

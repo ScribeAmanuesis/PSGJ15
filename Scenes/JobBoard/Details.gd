@@ -16,7 +16,7 @@ func _ready():
 	button.pressed.connect(turnIn)
 
 func turnIn():
-	Player.shadows[shadowObject] -= 1
+	#Player.shadows[shadowObject] -= 1
 	button.text = "Completed"
 	button.disabled = true
 #

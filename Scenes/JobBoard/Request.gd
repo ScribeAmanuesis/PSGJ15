@@ -20,6 +20,7 @@ func _ready():
 	shadowObject = job.shadowObject
 	
 	Player.requests.append(job)
+	#print(Player.shadows)
 	Player.shadows[shadowObject] += 1
 
 #

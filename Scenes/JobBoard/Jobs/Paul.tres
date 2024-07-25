@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Job" load_steps=4 format=3 uid="uid://dcxxp8mu113lw"]
+[gd_resource type="Resource" script_class="Job" load_steps=5 format=3 uid="uid://dcxxp8mu113lw"]
 
 [ext_resource type="Resource" uid="uid://gkfoy34hsuca" path="res://Scenes/Inventory/Items/Potions/rage_potion.tres" id="1_e5bru"]
 [ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_p7b8b"]
+[ext_resource type="Texture2D" uid="uid://dj2upwftvdd3s" path="res://Assets/EnemyWorry.png" id="3_mi6qp"]
 [ext_resource type="PackedScene" uid="uid://bnivg5ejn1i6y" path="res://Entities/Enemies/worry.tscn" id="3_t4ynn"]
 
 [resource]
@@ -11,3 +12,4 @@ flavorText = "A steady and reliable presence in any situation."
 potion = ExtResource("1_e5bru")
 shadow = "Worry"
 shadowObject = ExtResource("3_t4ynn")
+shadowImage = ExtResource("3_mi6qp")
