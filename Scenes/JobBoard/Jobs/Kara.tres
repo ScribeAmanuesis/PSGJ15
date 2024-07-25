@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bcx1qn8yvgabj" path="res://Scenes/Inventory/Items/Potions/slime_potion.tres" id="1_4ktr4"]
 [ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_ppyjc"]
-[ext_resource type="Texture2D" uid="uid://di42h6v3qf0kj" path="res://Assets/EnemyFret.png" id="3_6hngn"]
+[ext_resource type="PackedScene" uid="uid://d0ua05mj1dtkx" path="res://Entities/Enemies/fret.tscn" id="3_30nwv"]
 
 [resource]
 script = ExtResource("2_ppyjc")
@@ -10,4 +10,4 @@ name = "Kara"
 flavorText = "A compassionate healer with a gift for empathy."
 potion = ExtResource("1_4ktr4")
 shadow = "Fret"
-shadowImage = ExtResource("3_6hngn")
+shadowObject = ExtResource("3_30nwv")

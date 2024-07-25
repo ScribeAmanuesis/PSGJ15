@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://gkfoy34hsuca" path="res://Scenes/Inventory/Items/Potions/rage_potion.tres" id="1_y75u8"]
 [ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_cwfiv"]
-[ext_resource type="Texture2D" uid="uid://dj2upwftvdd3s" path="res://Assets/EnemyWorry.png" id="3_3ryix"]
+[ext_resource type="PackedScene" uid="uid://bnivg5ejn1i6y" path="res://Entities/Enemies/worry.tscn" id="3_78g26"]
 
 [resource]
 script = ExtResource("2_cwfiv")
@@ -10,4 +10,4 @@ name = "Mia"
 flavorText = "A creative artist with a vivid imagination."
 potion = ExtResource("1_y75u8")
 shadow = "Worry"
-shadowImage = ExtResource("3_3ryix")
+shadowObject = ExtResource("3_78g26")

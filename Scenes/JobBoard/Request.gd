@@ -4,7 +4,7 @@ var personName: String
 var potionName: String
 var flavorText: String
 var shadow: Texture2D
-var shadowName: String
+var shadowObject: PackedScene
 var job: Job
 #var currentNodeName:String
 
@@ -17,10 +17,10 @@ func _ready():
 	potionName = job.potion.name
 	flavorText = job.flavorText
 	shadow = job.shadowImage
-	shadowName = job.shadow
+	shadowObject = job.shadowObject
 	
 	Player.requests.append(job)
-	Player.shadows.append(job.shadow)
+	Player.shadows[shadowObject] += 1
 
 #
 #func _pressed():

@@ -8,7 +8,7 @@ extends PopupPanel
 @onready var button : = $VBoxContainer/Button
 
 #@onready var parent : = get_parent()
-var shadow: String
+var shadowObject: PackedScene
 #var activePoster: int 
 #var self_opened = false
 
@@ -16,7 +16,7 @@ func _ready():
 	button.pressed.connect(turnIn)
 
 func turnIn():
-	Player.shadows.erase(shadow)
+	Player.shadows[shadowObject] -= 1
 	button.text = "Completed"
 	button.disabled = true
 #
@@ -31,8 +31,8 @@ func turnIn():
 	#else:
 		#self.visible = true
 	#activePoster = int(req)
-func set_shadow_name(name: String):
-	shadow = name
+func set_shadow(shadow: PackedScene):
+	shadowObject = shadow
 func set_text(new_title : String, flavor : String, shadow : Texture2D, potion_name : String):
 	title_text.text = new_title
 	flavor_text.text = flavor

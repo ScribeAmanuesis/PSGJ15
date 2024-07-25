@@ -3,7 +3,7 @@ extends Node2D
 # Stats
 var wave : = 1 # Wave Counter for the TD Portion
 var requests : = []
-var shadows : = []
+var shadows : Dictionary = {Bother: 0, Fret: 0, Worry: 0, Woe: 0}
 
 # Inventories
 var ingredient_inv : Inv = preload("res://Scenes/Inventory/player_ingredient_inventory.tres")
@@ -31,7 +31,11 @@ const SALAMANDER = preload("res://Scenes/Inventory/Items/Towers/salamander.tres"
 #endregion
 var ingredients_legend: Array[InvItem] = [CINNABAR,MERCURY,SALT,SOUL,SULFUR]
 
-
+#Enemies
+var Bother = preload("res://Entities/Enemies/bother.tscn")
+var Fret = preload("res://Entities/Enemies/fret.tscn")
+var Woe = preload("res://Entities/Enemies/woe.tscn")
+var Worry = preload("res://Entities/Enemies/worry.tscn")
 #var ingredientNameToItem: Dictionary = {
 	#"Cinnabar": CINNABAR, 
 	#"Mercury": MERCURY, 

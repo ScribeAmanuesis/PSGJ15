@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bcx1qn8yvgabj" path="res://Scenes/Inventory/Items/Potions/slime_potion.tres" id="1_8xhu3"]
 [ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_5h0gd"]
-[ext_resource type="Texture2D" uid="uid://dgkn5s8q71opy" path="res://Assets/EnemyBother.png" id="3_d5ojf"]
+[ext_resource type="PackedScene" uid="uid://dwl8tsgpesjlp" path="res://Entities/Enemies/bother.tscn" id="3_iirgb"]
 
 [resource]
 script = ExtResource("2_5h0gd")
@@ -10,4 +10,4 @@ name = "Quinn"
 flavorText = "A free spirit who dances to the beat of their own drum."
 potion = ExtResource("1_8xhu3")
 shadow = "Bother"
-shadowImage = ExtResource("3_d5ojf")
+shadowObject = ExtResource("3_iirgb")

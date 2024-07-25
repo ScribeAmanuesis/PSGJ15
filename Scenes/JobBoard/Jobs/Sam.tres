@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://gkfoy34hsuca" path="res://Scenes/Inventory/Items/Potions/rage_potion.tres" id="1_ratea"]
 [ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_3x04u"]
-[ext_resource type="Texture2D" uid="uid://cmbo27kdirt0" path="res://Assets/EnemyWoe.png" id="3_hjfbm"]
+[ext_resource type="PackedScene" uid="uid://di10byji875sa" path="res://Entities/Enemies/woe.tscn" id="3_jdbbr"]
 
 [resource]
 script = ExtResource("2_3x04u")
@@ -10,4 +10,4 @@ name = "Sam"
 flavorText = "A versatile and adaptable friend who can fit into any role."
 potion = ExtResource("1_ratea")
 shadow = "Woe"
-shadowImage = ExtResource("3_hjfbm")
+shadowObject = ExtResource("3_jdbbr")

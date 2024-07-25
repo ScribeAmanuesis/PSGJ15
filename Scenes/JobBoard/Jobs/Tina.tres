@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bcx1qn8yvgabj" path="res://Scenes/Inventory/Items/Potions/slime_potion.tres" id="1_b2n0s"]
 [ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_81n74"]
-[ext_resource type="Texture2D" uid="uid://dj2upwftvdd3s" path="res://Assets/EnemyWorry.png" id="3_xj17c"]
+[ext_resource type="PackedScene" uid="uid://bnivg5ejn1i6y" path="res://Entities/Enemies/worry.tscn" id="3_bmgmg"]
 
 [resource]
 script = ExtResource("2_81n74")
@@ -10,4 +10,4 @@ name = "Tina"
 flavorText = "A meticulous planner with a keen eye for detail."
 potion = ExtResource("1_b2n0s")
 shadow = "Worry"
-shadowImage = ExtResource("3_xj17c")
+shadowObject = ExtResource("3_bmgmg")

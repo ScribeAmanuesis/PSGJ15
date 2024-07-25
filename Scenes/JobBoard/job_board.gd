@@ -23,6 +23,7 @@ var Tina: Job = preload("res://Scenes/JobBoard/Jobs/Tina.tres")
 
 var jobs = [Alice, Bob, Charlie, David, Eve, Frank, Grace, Hannah, Ian, Jack, Kara, Liam, Mia, Nina, Oliver, Paul, Quinn, Ruby, Sam, Tina]
 
+
 var potions = [
 	"Health Potion",
 	"Slime Potion",
@@ -46,8 +47,8 @@ func _ready():
 			request.shadow,
 			request.potionName
 		]))
-		request.pressed.connect(details.set_shadow_name.bindv([
-			request.shadowName
+		request.pressed.connect(details.set_shadow.bindv([
+			request.shadowObject
 		]))
 
 

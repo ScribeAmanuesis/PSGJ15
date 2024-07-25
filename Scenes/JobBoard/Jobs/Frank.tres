@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://ctr2c8pn73rmf" path="res://Scenes/Inventory/Items/Potions/health_potion.tres" id="1_05pb0"]
 [ext_resource type="Script" path="res://Scenes/JobBoard/Job.gd" id="2_sac4m"]
-[ext_resource type="Texture2D" uid="uid://di42h6v3qf0kj" path="res://Assets/EnemyFret.png" id="3_da6cb"]
+[ext_resource type="PackedScene" uid="uid://d0ua05mj1dtkx" path="res://Entities/Enemies/fret.tscn" id="3_80rye"]
 
 [resource]
 script = ExtResource("2_sac4m")
@@ -10,4 +10,4 @@ name = "Frank"
 flavorText = "A strong and silent type with a heart of gold."
 potion = ExtResource("1_05pb0")
 shadow = "Fret"
-shadowImage = ExtResource("3_da6cb")
+shadowObject = ExtResource("3_80rye")
