@@ -28,10 +28,11 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_knwso")
 script = ExtResource("1_np168")
 
-[node name="Details" parent="." instance=ExtResource("2_xyavx")]
-initial_position = 0
+[node name="Details" parent="." node_paths=PackedStringArray("container") instance=ExtResource("2_xyavx")]
+initial_position = 4
 size = Vector2i(300, 400)
 visible = false
+container = NodePath("../GridContainer")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 2

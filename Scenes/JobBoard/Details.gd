@@ -1,21 +1,31 @@
 extends PopupPanel
 
+@export var container : Container
+
 @onready var title_text : = $VBoxContainer/Title
 @onready var shadow_tex : = $VBoxContainer/Shadow/TextureRect
 @onready var flavor_text : = $VBoxContainer/Shadow/Label
 @onready var potion_text : = $VBoxContainer/Requirements/Label
 @onready var potion_tex : = $VBoxContainer/Requirements/TextureRect
-
 @onready var button : = $VBoxContainer/Button
 
-#@onready var parent : = get_parent()
 var shadowObject: PackedScene
-#var activePoster: int 
-#var self_opened = false
+var showing : = false
 
 func _ready():
 	button.pressed.connect(turnIn)
+	container.mouse_entered.connect(set.bind("showing", true))
+	#container.mouse_exited.connect(hide)
+	container.mouse_exited.connect(set.bind("showing", false))
 
+	
+func _process(delta):
+	var mouse_pos : Vector2i = get_parent().get_viewport().get_mouse_position()
+	if container.get_rect().has_point(mouse_pos):
+		popup(Rect2i(position + Vector2i(get_viewport().get_mouse_position()), Vector2i(150,200)))
+	else:
+		hide()
+		
 func turnIn():
 	#Player.shadows[shadowObject] -= 1
 	button.text = "Completed"
@@ -30,10 +40,4 @@ func set_text(new_title : String, flavor : String, shadow : Texture2D, potion_na
 	shadow_tex.texture = shadow
 	potion_text.text = potion_name
 	potion_tex.texture = potion_texture
-	#show()
-	print()
-	print(position)
-	print(get_viewport().get_mouse_position())
-	position = Vector2(get_viewport().get_mouse_position().x + 50, get_viewport().get_mouse_position().y + 50)
-	print(position)
-	popup()
+	popup(Rect2i(position + Vector2i(get_viewport().get_mouse_position()), Vector2i(150,200)))	
