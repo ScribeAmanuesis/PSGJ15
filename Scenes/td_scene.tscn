@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://djvu1vrl68rpr"]
+[gd_scene load_steps=18 format=3 uid="uid://djvu1vrl68rpr"]
 
 [ext_resource type="Texture2D" uid="uid://cb3mop4wy18pg" path="res://Assets/AlchemyShadowPack_AutoTile.png" id="1_5l7cl"]
 [ext_resource type="Texture2D" uid="uid://dw2bcx53cqr67" path="res://Assets/AlchemyShadowPack_Basic.png" id="1_ac2rv"]
+[ext_resource type="Script" path="res://Scenes/WaveController.gd" id="3_kexba"]
 [ext_resource type="Script" path="res://PathRandomizer.gd" id="3_x8n7w"]
 [ext_resource type="PackedScene" uid="uid://cap3eukwwq6js" path="res://Entities/Towers/Salamander.tscn" id="4_r8e3r"]
 [ext_resource type="PackedScene" uid="uid://dwl8tsgpesjlp" path="res://Entities/Enemies/bother.tscn" id="5_lbx4t"]
@@ -137,7 +138,7 @@ _data = {
 }
 point_count = 206
 
-[node name="TestSpace" type="Node2D"]
+[node name="TD" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 material = SubResource("CanvasItemMaterial_y5wdy")
@@ -153,6 +154,9 @@ layer_0/tile_data = PackedInt32Array(655360, 65542, 3, 655361, 131078, 3, 655362
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(304, 304)
+
+[node name="WaveController" type="Node2D" parent="."]
+script = ExtResource("3_kexba")
 
 [node name="PathRandomizer" type="Node2D" parent="." node_paths=PackedStringArray("tilemap", "path")]
 script = ExtResource("3_x8n7w")

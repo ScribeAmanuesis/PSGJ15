@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dxkvkprp701s2"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://dxkvkprp701s2"]
 
-[ext_resource type="Script" path="res://Scenes/Inventory/inventory_item.gd" id="1_2f1hx"]
+[ext_resource type="Script" path="res://Scenes/Inventory/Items/Ingredients/Ingredient.gd" id="1_28bf2"]
 [ext_resource type="Texture2D" uid="uid://dt1r2llrmdkgm" path="res://Assets/IngredientSoul.png" id="2_ixksk"]
 
 [resource]
-script = ExtResource("1_2f1hx")
+script = ExtResource("1_28bf2")
 name = "Souls"
 texture = ExtResource("2_ixksk")

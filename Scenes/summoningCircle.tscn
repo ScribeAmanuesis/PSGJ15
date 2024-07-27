@@ -155,28 +155,28 @@ layout_mode = 2
 [node name="Craft" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 48.0
-offset_top = 45.0
-offset_right = 120.0
-offset_bottom = 76.0
+offset_left = 56.0
+offset_top = 152.0
+offset_right = 128.0
+offset_bottom = 183.0
 text = "Craft"
 
 [node name="Cancel" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 183.0
-offset_top = 44.0
-offset_right = 255.0
-offset_bottom = 75.0
+offset_left = 191.0
+offset_top = 151.0
+offset_right = 263.0
+offset_bottom = 182.0
 text = "Cancel"
 
 [node name="Notification" parent="." instance=ExtResource("4_gllqy")]
 visible = false
 layout_mode = 1
-offset_left = 1.0
-offset_top = -289.0
-offset_right = 1.0
-offset_bottom = -289.0
+offset_left = 9.0
+offset_top = -182.0
+offset_right = 9.0
+offset_bottom = -182.0
 
 [connection signal="pressed" from="Craft" to="." method="_on_craft_pressed"]
 [connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]

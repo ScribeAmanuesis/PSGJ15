@@ -15,6 +15,8 @@ func set_item(new_item : InvItem):
 
 #region Drag Functions
 func _get_drag_data(at_position):
+	if not item:
+		return
 	var preview_texture = TextureRect.new()
 	preview_texture.texture = texture_rect.texture
 	preview_texture.expand_mode = 1
@@ -27,10 +29,10 @@ func _get_drag_data(at_position):
 	return data
 
 func _can_drop_data(_pos, data):
-	return data is InvItem 
+	return data is InvItem and data is Ingredient
 
 func _drop_data(_pos, data):
-	print_debug("dropped?")
+	#print_debug("dropped?")
 	texture_rect.texture = data.texture
 	set_item(data)
 	if data:

@@ -7,6 +7,7 @@ var Woe = preload("res://Entities/Enemies/woe.tscn")
 var Worry = preload("res://Entities/Enemies/worry.tscn")
 
 # Stats
+var lives : = 3
 var wave : = 1 # Wave Counter for the TD Portion
 var requests : = []
 var shadows : Dictionary = {Bother: 0, Fret: 0, Worry: 0, Woe: 0}
@@ -41,3 +42,12 @@ var ingredients_legend: Array[InvItem] = [CINNABAR,MERCURY,SALT,SOUL,SULFUR]
 func add_random_ingredients():
 	for i in range(10):
 		ingredient_inv.insert(ingredients_legend.pick_random())
+
+func hit():
+	lives -= 1
+	if lives < 1:
+		gameover()
+		
+func gameover():
+	get_tree().paused = true
+	print_debug("Gameover!")

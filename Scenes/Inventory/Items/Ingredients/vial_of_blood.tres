@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bioiyf5sdk3vy"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://bioiyf5sdk3vy"]
 
-[ext_resource type="Script" path="res://Scenes/Inventory/inventory_item.gd" id="1_li4gp"]
+[ext_resource type="Script" path="res://Scenes/Inventory/Items/Ingredients/Ingredient.gd" id="1_cu7g6"]
 [ext_resource type="Texture2D" uid="uid://dc0uqeqysy56e" path="res://Assets/Ingredient.png" id="2_al7du"]
 
 [resource]
-script = ExtResource("1_li4gp")
+script = ExtResource("1_cu7g6")
 name = "Vial of Blood"
 texture = ExtResource("2_al7du")

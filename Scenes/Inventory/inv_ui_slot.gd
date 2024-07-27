@@ -19,9 +19,17 @@ enum ITEM_TYPE {
 
 @onready var container : = $MarginContainer
 
+var drag_started : = false
+
 func _ready():
 	set_item_resource(item_resource)
-
+	
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_DRAG_END and not is_drag_successful() and drag_started:
+		drag_started = false
+		get_inventory().insert(item_resource)
+		update_quantity()
+		
 func set_item_resource(item : InvItem):
 	item_resource = item
 	if container != null:
@@ -42,6 +50,8 @@ func update(slot : InvSlot):
 func _get_drag_data(at_position):
 	if quantity < 1:
 		return null
+	
+	drag_started = true
 	
 	var preview_texture = TextureRect.new()
 	

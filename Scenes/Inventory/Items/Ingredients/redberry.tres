@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cmoqdnwaekqpu"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://cmoqdnwaekqpu"]
 
-[ext_resource type="Script" path="res://Scenes/Inventory/inventory_item.gd" id="1_0qgdq"]
+[ext_resource type="Script" path="res://Scenes/Inventory/Items/Ingredients/Ingredient.gd" id="1_04dth"]
 [ext_resource type="Texture2D" uid="uid://dymvlfb54xb5u" path="res://Assets/Berry.png" id="2_fbssp"]
 
 [resource]
-script = ExtResource("1_0qgdq")
+script = ExtResource("1_04dth")
 name = "Redberry"
 texture = ExtResource("2_fbssp")
