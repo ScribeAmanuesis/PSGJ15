@@ -1,12 +1,12 @@
 extends Panel
 
+signal item_added
+
 @onready var texture_rect = $Center/TextureRect
 #var has_item : = false
 
 var item : InvItem : 
 	set = set_item
-
-signal item_added
 
 func set_item(new_item : InvItem):
 	item = new_item
@@ -35,6 +35,7 @@ func _drop_data(_pos, data):
 	set_item(data)
 	if data:
 		item_added.emit()
+	
 	
 #endregion
 

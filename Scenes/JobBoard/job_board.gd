@@ -45,7 +45,8 @@ func _ready():
 			request.personName,
 			request.flavorText,
 			request.shadow,
-			request.potionName
+			request.potionName,
+			request.potion
 		]))
 		request.pressed.connect(details.set_shadow.bindv([
 			request.shadowObject

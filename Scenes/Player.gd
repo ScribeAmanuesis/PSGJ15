@@ -38,27 +38,6 @@ const SALAMANDER = preload("res://Scenes/Inventory/Items/Towers/salamander.tres"
 var ingredients_legend: Array[InvItem] = [CINNABAR,MERCURY,SALT,SOUL,SULFUR]
 
 
-#var ingredientNameToItem: Dictionary = {
-	#"Cinnabar": CINNABAR, 
-	#"Mercury": MERCURY, 
-	#"Salt": SALT, 
-	#"Soul": SOUL, 
-	#"Sulfur": SULFUR 
-#}
-#
-#func collect(item):
-	#ingredient_inv.insert(item)
-
 func add_random_ingredients():
 	for i in range(10):
 		ingredient_inv.insert(ingredients_legend.pick_random())
-
-#func brew_potion(potion):
-	#for ingredient in potion.ingredients:
-		#potion_inv.consume(ingredientNameToItem[ingredient], potion.ingredients[ingredient])
-		
-#func generate_requests(): NOT CURRENTLY IN USE
-	#pass
-	
-#func generate_shadows(): NOT CURRENTLY IN USE
-	#pass

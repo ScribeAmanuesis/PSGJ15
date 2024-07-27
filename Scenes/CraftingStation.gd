@@ -1,6 +1,9 @@
 extends Control
 class_name CraftingStation
 
+signal item_added
+signal item_removed
+
 @export var inventory : Inv = Player.potion_inv
 #The cauldron slots
 @onready var ingredient1#: = $Sprite2D/VBoxContainer/HBoxContainer3/IngredientDisplayPanel
@@ -58,7 +61,8 @@ func prep_crafting():
 
 
 func _on_item_added():
-	handleButtonVisibility()
+	item_added.emit()
+	#handleButtonVisibility()
 
 func handleButtonVisibility():
 	craft.visible = ingredient_slots_filled()
@@ -76,11 +80,12 @@ func any_ingredient_slots_filled() -> bool:
 			return true
 	return false
 
-func _on_cancel_pronessed():
+func _on_cancel_pressed():
 	for ingredient in ingredientUsed:
 		Player.ingredient_inv.insert(ingredient.item)
 		ingredient.set_item(null)
-	handleButtonVisibility()
+		item_removed.emit()
+	#handleButtonVisibility()
 
 func update_and_pop_crafting_notification(created):
 	craftingNotification.visible = true
@@ -103,4 +108,8 @@ func _on_craft_pressed():
 	for ingredient in ingredientUsed:
 		#ingredient.item = null
 		ingredient.set_item(null)
+	#handleButtonVisibility()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
 	handleButtonVisibility()

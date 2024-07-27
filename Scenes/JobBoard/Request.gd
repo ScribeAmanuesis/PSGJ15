@@ -2,6 +2,7 @@ extends TextureButton
 
 var personName: String
 var potionName: String
+var potion: Texture2D
 var flavorText: String
 var shadow: Texture2D
 var shadowObject: PackedScene
@@ -15,6 +16,7 @@ func _ready():
 	
 	personName = job.name
 	potionName = job.potion.name
+	potion = job.potion.texture
 	flavorText = job.flavorText
 	shadow = job.shadowImage
 	shadowObject = job.shadowObject
@@ -22,13 +24,3 @@ func _ready():
 	Player.requests.append(job)
 	#print(Player.shadows)
 	Player.shadows[shadowObject] += 1
-
-#
-#func _pressed():
-	#print_debug("clicked on")
-	#handleVisibility()
-#
-#func handleVisibility():
-	#currentNodeName = name
-	#var req_num = currentNodeName.split("Request")[1]
-	#parent.get_node("Details").toggle_menu(req_num)

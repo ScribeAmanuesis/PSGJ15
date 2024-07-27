@@ -4,6 +4,7 @@ extends PopupPanel
 @onready var shadow_tex : = $VBoxContainer/Shadow/TextureRect
 @onready var flavor_text : = $VBoxContainer/Shadow/Label
 @onready var potion_text : = $VBoxContainer/Requirements/Label
+@onready var potion_tex : = $VBoxContainer/Requirements/TextureRect
 
 @onready var button : = $VBoxContainer/Button
 
@@ -33,9 +34,10 @@ func turnIn():
 	#activePoster = int(req)
 func set_shadow(shadow: PackedScene):
 	shadowObject = shadow
-func set_text(new_title : String, flavor : String, shadow : Texture2D, potion_name : String):
+func set_text(new_title : String, flavor : String, shadow : Texture2D, potion_name : String, potion_texture : Texture2D):
 	title_text.text = new_title
 	flavor_text.text = flavor
 	shadow_tex.texture = shadow
 	potion_text.text = potion_name
+	potion_tex.texture = potion_texture
 	show()
