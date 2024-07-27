@@ -30,32 +30,21 @@ var potions = [
 	"Rage Potion",
 ]
 
-#var bother: Texture2D = preload("res://Assets/EnemyBother.png")
-#var fret: Texture2D = preload("res://Assets/EnemyFret.png")
-#var woe: Texture2D = preload("res://Assets/EnemyWoe.png")
-#var worry: Texture2D = preload("res://Assets/EnemyWorry.png")
-#var shadows = [bother,fret,woe,worry]
-
 @onready var details : PopupPanel= $Details
 @onready var requests_container = $GridContainer
 
 func _ready():
 	for request in requests_container.get_children():
-		request.pressed.connect(details.set_text.bindv([
+		request.mouse_entered.connect(details.set_text.bindv([
 			request.personName,
 			request.flavorText,
 			request.shadow,
 			request.potionName,
 			request.potion
 		]))
-		request.pressed.connect(details.set_shadow.bindv([
+		request.mouse_entered.connect(details.set_shadow.bindv([
 			request.shadowObject
 		]))
-
-
-func _input(event):
-	if Input.is_action_just_pressed("ui_accept"):
-		details.show()
-
+		#request.mouse_exited.connect($Details.hide())
 
 

@@ -20,24 +20,20 @@ func turnIn():
 	#Player.shadows[shadowObject] -= 1
 	button.text = "Completed"
 	button.disabled = true
-#
-#func toggle_menu(posternum):
-	#var req = "Request{num}".format({'num':posternum})
-	#title.text = parent.get_node(req).personName
-	#flavor_text.text = parent.get_node(req).flavorText
-	#shadow_tex.texture = parent.get_node(req).shadow
-	#
-	#if activePoster == int(req) and self.visible:
-		#self.visible = false
-	#else:
-		#self.visible = true
-	#activePoster = int(req)
+
 func set_shadow(shadow: PackedScene):
 	shadowObject = shadow
+	
 func set_text(new_title : String, flavor : String, shadow : Texture2D, potion_name : String, potion_texture : Texture2D):
 	title_text.text = new_title
 	flavor_text.text = flavor
 	shadow_tex.texture = shadow
 	potion_text.text = potion_name
 	potion_tex.texture = potion_texture
-	show()
+	#show()
+	print()
+	print(position)
+	print(get_viewport().get_mouse_position())
+	position = Vector2(get_viewport().get_mouse_position().x + 50, get_viewport().get_mouse_position().y + 50)
+	print(position)
+	popup()
