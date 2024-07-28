@@ -18,15 +18,14 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="inv_UI_slot" type="PanelContainer"]
-custom_minimum_size = Vector2(96, 96)
-offset_right = 96.0
-offset_bottom = 96.0
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8xc45")
 script = ExtResource("1_xj8io")
 item_resource = null
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 2
@@ -69,19 +68,17 @@ vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 visible = false
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 layout_mode = 2
 
 [node name="item_display" type="TextureRect" parent="CenterContainer/Panel"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = -32.0
 offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
 expand_mode = 1
 script = ExtResource("2_aikgr")
 
