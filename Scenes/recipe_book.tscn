@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uuosd")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -53,7 +53,7 @@ layout_mode = 2
 text = "Potion"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+[node name="Item" type="TextureRect" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_bn8ap")
 expand_mode = 4
@@ -67,17 +67,17 @@ offset_right = 670.0
 offset_bottom = 417.0
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="Ingredient1" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("4_kdbkm")
 expand_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+[node name="Ingredient2" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_0ndxj")
 expand_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+[node name="Ingredient3" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_ypdep")
 expand_mode = 2
@@ -90,10 +90,31 @@ offset_right = 687.0
 offset_bottom = 331.0
 text = "Next"
 
-[node name="Button" type="Button" parent="."]
+[node name="Previous" type="Button" parent="."]
 layout_mode = 0
 offset_left = 462.0
 offset_top = 301.0
 offset_right = 513.0
 offset_bottom = 332.0
 text = "Prev"
+
+[node name="Potions" type="Button" parent="."]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 127.0
+offset_right = 521.0
+offset_bottom = 158.0
+text = "Potion"
+
+[node name="Familiars" type="Button" parent="."]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 128.0
+offset_right = 596.0
+offset_bottom = 159.0
+text = "Familiar"
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Potions" to="." method="_on_potions_pressed"]
+[connection signal="pressed" from="Familiars" to="." method="_on_familiars_pressed"]
