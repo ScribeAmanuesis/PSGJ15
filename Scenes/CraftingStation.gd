@@ -98,7 +98,7 @@ func _on_craft_pressed():
 	for recipe in recipes.keys():
 		if recipe == ingredients:
 			valid = true
-			print_debug("Valid ingredient combination for: '{result}'".format({'result':recipes[recipe].name}))
+			#print_debug("Valid ingredient combination for: '{result}'".format({'result':recipes[recipe].name}))
 			# TODO Find a way to determine whether to insert into potion inventory or tower inventory
 			inventory.insert(recipes[recipe])
 			update_and_pop_crafting_notification(recipes[recipe])

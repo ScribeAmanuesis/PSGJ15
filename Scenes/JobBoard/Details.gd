@@ -36,13 +36,18 @@ func _input(event):
 func turnIn():
 	isCompleted = true
 	var request = get_parent().get_node("GridContainer").get_node(requestNum)
-	request.isCompleted = true
-	button.text = "Completed"
-	button.disabled = true
-	print("Player before is " + str(Player.shadows))
-	Player.shadows[shadowObject] -= 1
-	print("Player after is " + str(Player.shadows))
-	#setComplete.emit()
+	
+	#consume invnentory
+	var didConsume = Player.potion_inv.consume(request.job.potion, 1)
+	if didConsume:
+		request.isCompleted = true
+		button.text = "Completed"
+		button.disabled = true
+		Player.shadows[shadowObject] -= 1
+	elif !didConsume:
+		print("Not enough Materials")
+	#print("Player before is " + str(Player.shadows))
+	#print("Player after is " + str(Player.shadows))
 
 func checkComplete(isComplete):
 	if isComplete:

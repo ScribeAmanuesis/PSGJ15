@@ -27,11 +27,18 @@ func insert(item: InvItem):
 	item_added.emit()
 
 func consume(item: InvItem, amount: = 1):
+	#print("consuming ingredients")
 	var itemslots = slots.filter(func(slot): return slot.item == item)
+	#print(itemslots.is_empty())
 	if !itemslots.is_empty():
+		#print("entered statement, not empty")
+		#print(itemslots[0].quantity)
 		if(itemslots[0].quantity >= amount):
 			itemslots[0].quantity -= amount
+			print(itemslots[0].quantity)
 		else:
 			print("Not enough materials")
+			return false
 	update.emit()
 	item_removed.emit()
+	return true
