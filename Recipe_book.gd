@@ -58,8 +58,9 @@ func _ready():
 	currentFamiliarPage = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_pressed("open_recipe_book"):
+func _input(event):
+	if event.is_action_pressed("open_recipe_book"):
+		isVisible = !isVisible
 		checkVisibility()
 
 func checkVisibility():
@@ -135,9 +136,12 @@ func _on_potions_pressed():
 
 
 func _on_recipe_book_pressed():
-	if isVisible:
-		isVisible = false
-	elif isVisible == false:
-		isVisible = true
+	#print("pressed")
+	isVisible = !isVisible
 	checkVisibility()
 	
+
+
+func _on_close_pressed():
+	isVisible = false
+	checkVisibility()
