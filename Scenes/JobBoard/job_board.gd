@@ -37,7 +37,7 @@ var potions = [
 func _ready():
 	for request in requests_container.get_children():
 		#print(request.isCompleted)
-		request.mouse_entered.connect(func():_on_request_mouse_entered(request))
+		request.pressed.connect(func():_on_request_mouse_entered(request))
 		
 		request.pressed.connect(func():_on_request_mouse_entered(request))
 		
