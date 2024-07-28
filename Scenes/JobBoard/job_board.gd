@@ -30,21 +30,20 @@ var potions = [
 	"Rage Potion",
 ]
 
+
 @onready var details : PopupPanel= $Details
 @onready var requests_container = $GridContainer
 
 func _ready():
 	for request in requests_container.get_children():
-		request.mouse_entered.connect(details.set_text.bindv([
-			request.personName,
-			request.flavorText,
-			request.shadow,
-			request.potionName,
-			request.potion
-		]))
-		request.mouse_entered.connect(details.set_shadow.bindv([
-			request.shadowObject
-		]))
+		#print(request.isCompleted)
+		request.mouse_entered.connect(func():_on_request_mouse_entered(request))
+		
+		request.pressed.connect(func():_on_request_mouse_entered(request))
+		
 		#request.mouse_exited.connect($Details.hide())
 
+func _on_request_mouse_entered(request):
+	details.set_text(request.name,request.personName,request.flavorText,request.shadow,request.potionName,request.potion,request.isCompleted)
+	details.set_shadow(request.shadowObject)
 

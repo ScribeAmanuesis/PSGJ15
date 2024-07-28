@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://drqhsf2p838dn"]
+
+[ext_resource type="Script" path="res://Recipe_book.gd" id="1_uuosd"]
+[ext_resource type="Texture2D" uid="uid://b17tccxer0viv" path="res://Assets/requests.png" id="2_0olcj"]
+[ext_resource type="Texture2D" uid="uid://dvovauqfa8jrk" path="res://Assets/FamiliarCat.png" id="3_bn8ap"]
+[ext_resource type="Texture2D" uid="uid://r12klmu8g2qy" path="res://Assets/RagePotion.png" id="3_ypdep"]
+[ext_resource type="Texture2D" uid="uid://jk4gm08nhgwj" path="res://Assets/HealthPotion.png" id="4_kdbkm"]
+[ext_resource type="Texture2D" uid="uid://bxej5g6ownd1d" path="res://Assets/SlimePotion.png" id="5_0ndxj"]
+
+[node name="Recipes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uuosd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -169.5
+offset_right = 129.0
+offset_bottom = 169.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0olcj")
+
+[node name="CenterContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -130.0
+offset_right = 69.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Potion"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_bn8ap")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 484.0
+offset_top = 364.0
+offset_right = 670.0
+offset_bottom = 417.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_kdbkm")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_0ndxj")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_ypdep")
+expand_mode = 2
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 642.0
+offset_top = 300.0
+offset_right = 687.0
+offset_bottom = 331.0
+text = "Next"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 301.0
+offset_right = 513.0
+offset_bottom = 332.0
+text = "Prev"
