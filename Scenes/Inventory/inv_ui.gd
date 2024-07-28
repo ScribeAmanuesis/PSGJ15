@@ -9,9 +9,9 @@ extends Control
 @onready var potion_inv: Inv = Player.potion_inv
 @onready var tower_inv: Inv = Player.tower_inv
 
-@onready var ingredient_slots: Array = $PanelContainer/MarginContainer/VBoxContainer/Ingredients.get_children()
-@onready var potion_slots: Array = $PanelContainer/MarginContainer/VBoxContainer/Potions.get_children()
-@onready var tower_slots: Array = $PanelContainer/MarginContainer/VBoxContainer/Towers.get_children()
+@onready var ingredient_slots: Array = $PanelContainer/MarginContainer/HBoxContainer/Ingredients.get_children()
+@onready var potion_slots: Array = $PanelContainer/MarginContainer/HBoxContainer/Potions.get_children()
+@onready var tower_slots: Array = $PanelContainer/MarginContainer/HBoxContainer/Towers.get_children()
 
 var is_open = true
 

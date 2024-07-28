@@ -48,7 +48,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_i3rhf")
