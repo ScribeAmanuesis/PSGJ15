@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://c3ddk22tmynlc"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c3ddk22tmynlc"]
 
 [ext_resource type="Script" path="res://Scenes/Inventory/inventory_item.gd" id="1_nu6vw"]
+[ext_resource type="Texture2D" uid="uid://bbkcpbxqk6gyn" path="res://Assets/FamiliarSalamander.png" id="2_sakm0"]
 
 [resource]
 script = ExtResource("1_nu6vw")
 name = "Salamander"
+texture = ExtResource("2_sakm0")

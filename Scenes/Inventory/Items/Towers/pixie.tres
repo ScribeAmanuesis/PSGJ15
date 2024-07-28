@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://bh5e4wuek21ib"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bh5e4wuek21ib"]
 
 [ext_resource type="Script" path="res://Scenes/Inventory/inventory_item.gd" id="1_rygob"]
+[ext_resource type="Texture2D" uid="uid://dlu0upkekbcd8" path="res://Assets/FamiliarFairy.png" id="2_vh15h"]
 
 [resource]
 script = ExtResource("1_rygob")
 name = "Pixie"
+texture = ExtResource("2_vh15h")
