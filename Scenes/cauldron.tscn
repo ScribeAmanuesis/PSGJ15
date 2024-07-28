@@ -170,6 +170,7 @@ text = "Cancel"
 
 [node name="Notification" parent="." instance=ExtResource("4_6fja6")]
 visible = false
+z_index = 1
 layout_mode = 1
 offset_left = 4.0
 offset_top = -168.0
