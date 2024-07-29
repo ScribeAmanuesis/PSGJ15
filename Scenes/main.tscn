@@ -7,10 +7,18 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xl4xd")
 
-[node name="AlchemistDesk" parent="." instance=ExtResource("1_0xe4w")]
-
 [node name="TD" parent="." instance=ExtResource("2_rto6y")]
 visible = false
+
+[node name="AlchemistDesk" parent="." instance=ExtResource("1_0xe4w")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_bottom = 0.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Next Scene" type="Button" parent="."]
 z_index = 1
