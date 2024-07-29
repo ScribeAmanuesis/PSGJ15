@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ejy8nisxjw5q"]
+[gd_scene load_steps=11 format=3 uid="uid://ejy8nisxjw5q"]
 
 [ext_resource type="PackedScene" uid="uid://b4qnvgdco6wq3" path="res://Entities/Towers/tower_base.tscn" id="1_8mkdc"]
 [ext_resource type="Script" path="res://Effects/DamageTarget.gd" id="2_3ewn7"]
+[ext_resource type="Texture2D" uid="uid://dvovauqfa8jrk" path="res://Assets/FamiliarCat.png" id="2_8csre"]
 [ext_resource type="Script" path="res://Effects/EmitParticles.gd" id="3_g0vqt"]
 [ext_resource type="Texture2D" uid="uid://cwqhnf56a2vda" path="res://Assets/Particles/scratch_01.png" id="4_stavw"]
 
@@ -28,6 +29,9 @@ radius = 64.0
 
 [node name="Cat" instance=ExtResource("1_8mkdc")]
 cooldown = 0.25
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_8csre")
 
 [node name="DamageTarget" type="Node2D" parent="Effects" index="0"]
 script = ExtResource("2_3ewn7")

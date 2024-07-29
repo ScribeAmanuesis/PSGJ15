@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch3ahwxp71dfk"]
+[gd_scene load_steps=11 format=3 uid="uid://ch3ahwxp71dfk"]
 
 [ext_resource type="PackedScene" uid="uid://b4qnvgdco6wq3" path="res://Entities/Towers/tower_base.tscn" id="1_xfinh"]
+[ext_resource type="Texture2D" uid="uid://dsacww28tmtcp" path="res://Assets/FamiliarPixie.png" id="2_d1g0b"]
 [ext_resource type="Script" path="res://Effects/SlowTarget.gd" id="2_ksuwa"]
 [ext_resource type="Script" path="res://Effects/EmitParticles.gd" id="2_u745d"]
 [ext_resource type="Texture2D" uid="uid://c2c68wig2ljcs" path="res://Assets/Particles/star_02.png" id="3_sfli4"]
@@ -32,6 +33,9 @@ radius = 96.0
 
 [node name="Pixie" instance=ExtResource("1_xfinh")]
 targeting_order = 1
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_d1g0b")
 
 [node name="SlowTarget" type="Node2D" parent="Effects" index="0"]
 script = ExtResource("2_ksuwa")
