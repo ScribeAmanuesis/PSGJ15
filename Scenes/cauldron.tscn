@@ -151,21 +151,29 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Craft" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 51.0
-offset_top = 166.0
-offset_right = 123.0
-offset_bottom = 197.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.272
+anchor_top = 0.567
+anchor_right = 0.272
+anchor_bottom = 0.567
+offset_left = -36.04
+offset_top = -15.44
+offset_right = 35.96
+offset_bottom = 15.56
 text = "Craft"
 
 [node name="Cancel" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 186.0
-offset_top = 165.0
-offset_right = 258.0
-offset_bottom = 196.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.694
+anchor_top = 0.564
+anchor_right = 0.694
+anchor_bottom = 0.564
+offset_left = -36.08
+offset_top = -15.48
+offset_right = 35.92
+offset_bottom = 15.52
 text = "Cancel"
 
 [node name="Notification" parent="." instance=ExtResource("4_6fja6")]

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Player="*res://Scenes/Player.gd"
+TransitionScreen="*res://Scenes/transition_screen.tscn"
 
 [display]
 
