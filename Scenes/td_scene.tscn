@@ -178,13 +178,13 @@ position = Vector2(-96, 232)
 
 [node name="Salamander2" parent="Towers" instance=ExtResource("4_r8e3r")]
 z_index = 7
-position = Vector2(-32, 232)
+position = Vector2(-16, 248)
 
 [node name="Cat" parent="Towers" instance=ExtResource("6_yj5mm")]
 position = Vector2(-288, 552)
 
 [node name="Pixie" parent="Towers" instance=ExtResource("7_tlpxl")]
-position = Vector2(-224, 424)
+position = Vector2(-240, 408)
 
 [node name="PathStart" type="Node2D" parent="."]
 position = Vector2(16, 16)
